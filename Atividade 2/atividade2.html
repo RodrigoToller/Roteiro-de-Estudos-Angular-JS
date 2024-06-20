@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-controller="meuController">
+        <h2>Formulário</h2>
+        <input type="text" ng-model="nome" placeholder="Digite seu nome">
+        <p>Olá, {{ nome }}</p>
+
+        <h2>Lista Dinâmica</h2>
+        <ul>
+            <li ng-repeat="item in itens">{{ item }}</li>
+        </ul>
+    </div>
+
+    <script>
+        var app = angular.module('meuApp', []);
+        app.controller('meuController', function($scope) {
+            $scope.nome = "";
+            $scope.itens = ["Item 1", "Item 2", "Item 3"];
+        });
+    </script>
+</body>
+</html>

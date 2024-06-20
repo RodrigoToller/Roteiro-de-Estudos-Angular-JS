@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="at1.css">
+    <title>Introdução ao Angular</title>
+</head>
+<body>
+    <header>
+        <h1><i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>Plano de Estudo Angular<i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i></h1>
+    </header>
+
+
+    <h1 class="titulo-atividade"> ATIVIDADE 1 - Introdução ao Angular</h1>
+
+    <div ng-app="meuApp" ng-controller="meuController" class="conteudo">
+        <div class="campo-robo">
+            <img src="img/angular roboto.png" alt="foto do robo do angularJS">
+            <h2>{{ mensagem }}</h2>
+            <a href="../index.html"> Voltar </a>
+        </div>
+        <div class="angular-explicacao">
+            <h2> O que é AngularJS? </h2>
+            <p> AngularJS é um framework JavaScript de código aberto mantido pelo Google que auxilia na criação de Single Page Applications (SPA). </p>
+            <p> O AngularJS estende o HTML com novos atributos. </p>
+            <p> O AngularJS é perfeito para desenvolvimento de aplicações web de uma única página. </p>
+            <p> O AngularJS é fácil de aprender. </p>
+            <p> O AngularJS é um framework JavaScript poderoso. </p>
+        </div>
+        <div class="controler-explicacao">
+            <h2> O que é um Controller? </h2>
+            <p> Um controller é uma função JavaScript que controla a parte de trás da página HTML. </p>
+            <p> O controller é uma parte do MVC (Model View Controller) que ajuda a controlar a lógica de negócios. </p>
+        </div>
+        <div class="exemplo-code">
+            <h2> Exemplos de Código </h2>
+            <pre class="style-code">
+                <code class="style-code">
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"&gt;&lt;/script&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+
+                    &lt;div ng-app="myApp" ng-controller="myCtrl"&gt;
+
+                    &lt;p&gt;{{ greeting }}&lt;/p&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;script&gt;
+                    var app = angular.module('myApp', []);
+                    app.controller('myCtrl', function($scope) {
+                        $scope.greeting = 'Hello, World!';
+                    });
+                    &lt;/script&gt;
+
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+            <p > o exemplo acima, mostra como foi feito o nosso dialogo do robo AngularJS</p>
+        </div>
+        <div class="referencias">
+            <h2> Recursos Adicionais </h2>
+            <ul>
+                <li><a href="https://angularjs.org/">Documentação Oficial do AngularJS</a></li>
+                <li><a href="https://www.w3schools.com/angular/">Tutoriais do AngularJS no W3Schools</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <footer>
+        <p>&copy; 2024 Plano de Estudo Angular. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        var app = angular.module('meuApp', []);
+        app.controller('meuController', function($scope) {
+            $scope.mensagem = "Olá, eu sou o Robo AngularJS!";
+        });
+    </script>
+</body>
+</html>

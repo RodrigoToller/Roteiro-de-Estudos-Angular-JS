@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-controller="meuController">
+        <h2>Dropdown Dinâmico</h2>
+        <select ng-model="selecionado" ng-options="item for item in itens"></select>
+        <p>Selecionado: {{ selecionado }}</p>
+
+        <h2>Elementos Condicionais</h2>
+        <button ng-click="mostrar = !mostrar">Alternar Visibilidade</button>
+        <p ng-show="mostrar">Este parágrafo é visível.</p>
+        <p ng-if="mostrar">Este parágrafo também é visível.</p>
+    </div>
+
+    <script>
+        var app = angular.module('meuApp', []);
+        app.controller('meuController', function($scope) {
+            $scope.itens = ["Opção 1", "Opção 2", "Opção 3"];
+            $scope.mostrar = true;
+        });
+    </script>
+</body>
+</html>

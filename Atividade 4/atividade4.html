@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+        .vermelho { color: red; }
+        .verde { color: green; }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-controller="meuController">
+        <h2>Alteração Condicional de Classes</h2>
+        <input type="checkbox" ng-model="isVermelho"> Vermelho
+        <p ng-class="{'vermelho': isVermelho, 'verde': !isVermelho}">
+            Este texto muda de cor.
+        </p>
+    </div>
+
+    <script>
+        var app = angular.module('meuApp', []);
+        app.controller('meuController', function($scope) {
+            $scope.isVermelho = true;
+        });
+    </script>
+</body>
+</html>

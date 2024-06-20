@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-controller="meuController">
+        <h2>Watchers</h2>
+        <input type="text" ng-model="nome" placeholder="Digite seu nome">
+        <p>Nome Anterior: {{ nomeAnterior }}</p>
+        <p>Nome Atual: {{ nome }}</p>
+    </div>
+
+    <script>
+        var app = angular.module('meuApp', []);
+        app.controller('meuController', function($scope) {
+            $scope.nome = "";
+            $scope.nomeAnterior = "";
+
+            $scope.$watch('nome', function(newValue, oldValue) {
+                $scope.nomeAnterior = oldValue;
+            });
+        });
+    </script>
+</body>
+</html>
