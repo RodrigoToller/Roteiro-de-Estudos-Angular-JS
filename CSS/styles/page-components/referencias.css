@@ -2,7 +2,7 @@
     text-align: center;
     padding: 25px;
     border: solid 2px black;
-    background-color: var(--color-vermelho-angular);
+    background-color: rgb(1, 181, 187);
     color: white;
     border-radius: 40px;
     box-shadow: 0 0 10px black;
@@ -14,16 +14,11 @@
 
 }
 .referencias ul li{
-
     margin: 10px;
     text-decoration: none;
-
-
-
-
 }
 .referencias ul li a{
-    color: aqua;
+    color: white;
     margin: 10px;
     text-decoration: none;
 

@@ -23,11 +23,15 @@
 
 }
 img{
-    margin: 0 20%;
+
     width: 250px;
+    height: 250px;
 }
 .campo-robo{
     display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
     border: solid 1px black;
     border-radius: 20px;
     padding: 2em;
@@ -55,6 +59,11 @@ img{
 
 }
 
+
+.campo-robo h2{
+    text-align: center;
+}
+
 .formatar-grid-list{
     
     display: flex;
@@ -64,17 +73,16 @@ img{
 }
 
 .lista-de-tarefas .titulo-adicionar{
-    margin: 0;
-    font-size: 1.8rem;
-    background-color: var(--color-vermelho-angular);
+
+    align-self: top;
     text-align: center;
-    align-self: center;
+    font-size: 1.8rem;
     padding: 10px;
     border-radius: 12px;
     text-transform: uppercase;
-    color: white;
-    height: 50%;
-}
+    color: var(--color-vermelho-angular)
+ }
+
 
 .secao-adicionar-tarefas{
 
@@ -97,8 +105,11 @@ img{
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1.5em;
-    color: var(--color-vermelho-angular);
+    background-color: var(--color-vermelho-angular);
     align-self: center;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
 
 }
 

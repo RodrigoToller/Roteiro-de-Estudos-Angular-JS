@@ -1,29 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" ng-app="meuApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="at3.css">
     <title>Document</title>
 </head>
-<body>
-    <div ng-controller="meuController">
-        <h2>Dropdown Dinâmico</h2>
-        <select ng-model="selecionado" ng-options="item for item in itens"></select>
-        <p>Selecionado: {{ selecionado }}</p>
+<body ng-controller="meuController">
+    <header>
+        <a class="link-voltar" href="../index.html"><h1><i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>Plano de Estudo Angular<i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i></h1></a>
+    </header>
+    <main>
+        <h1 class="titulo-atividade">Dropdown Dinâmico e Elementos Condicionais</h1>
+        <div class="conteudo-aplicado">
+            <div class="conteudo-principal">
+                <div class="dropdown-section box-person">
+                    <h2>Dropdown Dinâmico</h2>
+                    <select ng-model="selecionado" ng-options="item for item in itens"></select>
+                    <p>Selecionado: {{ selecionado }}</p>
+                </div>
+                <div class="condicional-section box-person">
+                    <h2>Elementos Condicionais</h2>
+                    <button ng-click="mostrar = !mostrar">Alternar Visibilidade</button>
+                    <p ng-show="mostrar">Este parágrafo é visível.</p>
+                    <p ng-if="mostrar">Este parágrafo também é visível.</p>
+                </div>
+            </div>
+        </div>
+        
 
-        <h2>Elementos Condicionais</h2>
-        <button ng-click="mostrar = !mostrar">Alternar Visibilidade</button>
-        <p ng-show="mostrar">Este parágrafo é visível.</p>
-        <p ng-if="mostrar">Este parágrafo também é visível.</p>
-    </div>
+        <div class="grid-separador"> 
+            <div class="explicacao-classica">
+                <h2 style="color: rgb(0, 161, 161);"> O que é um Dropdown Dinâmico? </h2>
+                <p>Um dropdown dinâmico é uma lista suspensa que permite ao usuário 
+                    selecionar uma opção de um conjunto de opções. 
+                    O termo "dinâmico" indica que o conteúdo da lista pode mudar com base
+                     nos dados fornecidos pelo controlador AngularJS.</p>
+                     
+                 <p> <strong>Componentes Principais</strong>
+                    <ul>
+                        <li> <strong>ng-model:</strong>  Liga a seleção do dropdown a uma variável no controlador.</li>
+                        <li> <strong>ng-options:</strong>  Itera sobre uma lista de itens e cria as opções do dropdown.</li>
+                    </ul>
+    
+                    <h3>Como Funciona?</h3>
+                    
+                    Vamos usar uma analogia: imagine que você está em um restaurante e o garçom lhe dá um cardápio com diferentes opções de pratos.
+                     O <strong>dropdown</strong>  é como esse cardápio, e <strong>ng-options</strong>  é o garçom que preenche o cardápio com os pratos disponíveis.</p>    
+            </div>
+            <div class="campo-laranja">
+                <h2 style="color: aqua;">Elementos Condicionais</h2>
+                <p> <h3>O que são Elementos Condicionais?</h3>
+                    
+                    Elementos condicionais são partes da interface que só são exibidas quando certas condições são atendidas. 
+                    No AngularJS, usamos diretivas como ng-show e ng-if para controlar a visibilidade desses elementos.
+                </p>
+                <h3>Componentes Principais</h3> 
+                <ul>
+                    <li> <strong>ng-show:</strong>Mostra ou esconde um elemento com base em uma expressão booleana.</li>
+                    <li><strong>ng-if:</strong> Adiciona ou remove completamente um elemento do DOM com base em uma expressão booleana.</li>
+                </ul>
+                <h3>Como Funciona?</h3> 
+                <p>Vamos usar outra analogia: imagine que você tem uma lâmpada controlada por um interruptor. 
+                    <strong>ng-show </strong> é como acender ou apagar a lâmpada (a lâmpada ainda está lá, mas pode estar apagada),
+                     enquanto <strong>ng-if</strong>  é como conectar ou desconectar a lâmpada (a lâmpada é removida quando está desligada).</p>    
+            </div>
+        </div>
 
+
+        <div class="configuracao-robo">
+
+            <div class="condicional-section centralizar-textos box-person-controlador-de-mensagem">
+                <h2>Controlador de Mensagens</h2>
+                <p> Aperte o botão para Alterar a visualização da mensagem do Robo AngularJS</p>
+                <button ng-click="mostrarMsgRobo = !mostrarMsgRobo">Visualizar Mensagem</button>
+            </div>
+
+
+            <div class="campo-robo">
+                <h1 style="text-align: center;">ANGULAR JS ROBO</h1>
+                <img src="../Atividade 1/img/angular roboto.png" alt="foto do robo do angularJS">
+                <h2 ng-show="mostrar"> {{ selecionado }}</h2>
+                <h2 ng-if="mostrar">{{ CHATTYPE2 }}</h2>
+            </div>
+
+            <div class="dropdown-section box-person-controlador-de-mensagem">
+                <h2>Dropdown Dinâmico</h2>
+                <select ng-model="selecionado" ng-options="item for item in objeto.chatOptions1"></select>
+                <p>Selecionado: {{ selecionado }}</p>
+            </div>
+        </div>
+        
+
+        <div class="referencias">
+            <h2> Recursos Adicionais </h2>
+            <ul>
+                <li><a href="https://docs.angularjs.org/api/ng/directive/ngOptions">AngularJS Documentation - ngOptions</a></li>
+                <li><a href="https://www.w3schools.com/angular/ng_ng-show.asp">W3Schools - AngularJS ng-show / ng-hide</a></li>
+                <li><a href="https://www.w3schools.com/angular/ng_ng-if.asp#:~:text=AngularJS%20ng%2Dif%20Directive&text=The%20ng%2Dif%20directive%20removes,is%20added%20in%20the%20DOM.">W3Schools - AngularJS ng-if</a></li>
+            </ul>
+        </div>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Plano de Estudo Angular. Todos os direitos reservados.</p>
+    </footer>
     <script>
         var app = angular.module('meuApp', []);
         app.controller('meuController', function($scope) {
+
+            $scope.objeto = { 
+                chatOptions1 : ["Olá! Como posso ajudar?", "Qual é a sua dúvida?", "Estou aqui para ajudar!"],
+                chatOptions2 : ["Olá! Como posso ajudar?", "Qual é a sua dúvida?", "Estou aqui para ajudar!"],
+                chatOptions3 : ["Olá! Como posso ajudar?", "Qual é a sua dúvida?", "Estou aqui para ajudar!"],
+            };
+
             $scope.itens = ["Opção 1", "Opção 2", "Opção 3"];
             $scope.mostrar = true;
         });
+
     </script>
 </body>
 </html>

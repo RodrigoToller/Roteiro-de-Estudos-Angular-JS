@@ -12,7 +12,6 @@
     <header>
         <a class="link-voltar" href="../index.html"><h1><i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>Plano de Estudo Angular<i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i></h1></a>
     </header>
-
     <main>
         <h1 class="titulo-atividade"> Atividade 2: Diretivas Essenciais</h1>
         <div class="lista-de-tarefas">
@@ -29,7 +28,6 @@
                     <img src="../Atividade 1/img/angular roboto.png" alt="foto do robo do angularJS">
                     <h2>{{ CHATTYPE1 }}</h2>
                     <h2>{{ CHATTYPE2 }}</h2>
-                 
                 </div>
 
                 <div class="gestor-de-tarefas"> 
@@ -242,21 +240,13 @@
 
 
     </main>
-   
-    
     <footer>
         <p>&copy; 2024 Plano de Estudo Angular. Todos os direitos reservados.</p>
     </footer>
-
-
-
-
-
-
 <script>
      var app = angular.module('myApp', []);
 
-app.controller('MainController', function($scope, $timeout) {
+    app.controller('MainController', function($scope, $timeout) {
     $scope.tasks = [];
     $scope.newTask = '';
 
