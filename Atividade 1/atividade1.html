@@ -4,41 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="at1.css">
+    <link rel="icon" href="../img/icon-title/roboto-icon-title.png">
     <title>Introdução ao Angular</title>
 </head>
 <body>
     <header>
-        <h1><i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>Plano de Estudo Angular<i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i></h1>
+        <a class="link-voltar" href="../index.html"><h1><i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>Plano de Estudo Angular<i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i></h1></a>
     </header>
 
 
     <h1 class="titulo-atividade"> ATIVIDADE 1 - Introdução ao Angular</h1>
-
-    <div ng-app="meuApp" ng-controller="meuController" class="conteudo">
         <div class="campo-robo">
             <img src="img/angular roboto.png" alt="foto do robo do angularJS">
-            <h2>{{ mensagem }}</h2>
+            <h2></h2>
             <a href="../index.html"> Voltar </a>
         </div>
-        <div class="angular-explicacao">
+        <div class="explicacao-classica">
             <h2> O que é AngularJS? </h2>
-            <p> AngularJS é um framework JavaScript de código aberto mantido pelo Google que auxilia na criação de Single Page Applications (SPA). </p>
-            <p> O AngularJS estende o HTML com novos atributos. </p>
-            <p> O AngularJS é perfeito para desenvolvimento de aplicações web de uma única página. </p>
-            <p> O AngularJS é fácil de aprender. </p>
-            <p> O AngularJS é um framework JavaScript poderoso. </p>
+            <p> AngularJS é um framework JavaScript de código aberto mantido pelo Google que auxilia na criação de Single Page Applications (SPA). Ele foi projetado para simplificar tanto o desenvolvimento quanto o teste de tais aplicações.</p>
+            <ul>
+                <li>AngularJS estende o HTML com novos atributos e funcionalidades usando diretivas, como <span class="code-model-laranja">ng-model</span>, <span class="code-model-laranja">ng-bind</span>, <span class="code-model-laranja">ng-repeat</span>, e muitas outras.</li>
+                <li>Ele é perfeito para desenvolvimento de aplicações web de uma única página, onde todo o conteúdo é carregado de uma vez e a navegação é feita de forma dinâmica.</li>
+                <li>Com AngularJS, você pode criar aplicações ricas e responsivas com facilidade devido ao binding de dados bidirecional, que sincroniza automaticamente os dados entre o modelo e a view.</li>
+                <li>AngularJS é fácil de aprender, especialmente se você já tem conhecimento de HTML, CSS e JavaScript.</li>
+                <li>É um framework JavaScript poderoso que suporta injeção de dependências, modularidade e facilita a separação de preocupações, seguindo o padrão MVC (Model-View-Controller).</li>
+            </ul>
+            <p>Além disso, o AngularJS possui uma grande comunidade e uma extensa documentação, o que facilita o aprendizado e a resolução de problemas.</p>
         </div>
-        <div class="controler-explicacao">
+        <div class="campo-laranja">
             <h2> O que é um Controller? </h2>
-            <p> Um controller é uma função JavaScript que controla a parte de trás da página HTML. </p>
-            <p> O controller é uma parte do MVC (Model View Controller) que ajuda a controlar a lógica de negócios. </p>
+        <p> Um controller no AngularJS é uma função JavaScript que controla a lógica de negócios de uma parte da página HTML. Ele é responsável por preparar os dados e responder às interações do usuário. O controller atua como intermediário entre a view (interface do usuário) e o modelo (dados). </p>
+        <ul>
+            <li>O controller é uma parte essencial do padrão MVC (Model-View-Controller). No padrão MVC, o controller gerencia a comunicação entre o modelo (dados) e a view (interface do usuário).</li>
+            <li>Dentro de um controller, você pode definir variáveis e funções no <span class="code-model-azul">$scope</span>. Essas variáveis e funções podem então ser acessadas pela view.</li>
+            <li>Por exemplo, ao definir <span class="code-model-azul">$scope.mensagem = "Olá, eu sou o Robo AngularJS!"</span> no controller, a view pode exibir esta mensagem usando a expressão <span class="code-model-azul">"{{ mensagem }<p style="display: none;">'</p>}"</span>.</li>
+            <li>Os controllers ajudam a organizar o código, mantendo a lógica de negócios separada da lógica de exibição.</li>
+            <li>Em AngularJS, um controller pode ser reutilizado em diferentes partes da aplicação, promovendo a modularidade e a manutenção do código.</li>
+        
+        
+        </ul>
         </div>
         <div class="exemplo-code">
             <h2> Exemplos de Código </h2>
-            <pre class="style-code">
-                <code class="style-code">
+            <pre class="">
+                <code class="">
                     &lt;!DOCTYPE html&gt;
                     &lt;html&gt;
                     &lt;head&gt;
@@ -46,16 +57,19 @@
                     &lt;/head&gt;
                     &lt;body&gt;
 
-                    &lt;div ng-app="myApp" ng-controller="myCtrl"&gt;
+                    &lt;div ng-app="meuApp" ng-controller="meuController" class="conteudo"&gt;
 
-                    &lt;p&gt;{{ greeting }}&lt;/p&gt;
+                        &lt;img src="img/angular roboto.png" alt="foto do robo do angularJS"&gt;
+                        &lt;h2&gt;{ mensagem }&lt;/h2&gt;
+                        &lt;a href="../index.html"&gt; Voltar &lt;/a&gt;
+
 
                     &lt;/div&gt;
 
                     &lt;script&gt;
-                    var app = angular.module('myApp', []);
-                    app.controller('myCtrl', function($scope) {
-                        $scope.greeting = 'Hello, World!';
+                    var app = angular.module('meuApp', []);
+                    app.controller('meuController', function($scope) {
+                        $scope.mensagem = "Olá, eu sou o Robo AngularJS!";
                     });
                     &lt;/script&gt;
 

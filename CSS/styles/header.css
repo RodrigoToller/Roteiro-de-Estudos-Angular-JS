@@ -1,0 +1,14 @@
+
+.link-voltar{
+  text-decoration: none;
+  color: white;
+}
+header {
+    background-color: var(--color-vermelho-angular);
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+header h1 {
+margin: 0;
+}

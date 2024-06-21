@@ -1,29 +1,311 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="at2.css">
     <title>Document</title>
 </head>
-<body>
-    <div ng-controller="meuController">
-        <h2>Formulário</h2>
-        <input type="text" ng-model="nome" placeholder="Digite seu nome">
-        <p>Olá, {{ nome }}</p>
+<body ng-controller="MainController">
+    <header>
+        <a class="link-voltar" href="../index.html"><h1><i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>Plano de Estudo Angular<i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i></h1></a>
+    </header>
 
-        <h2>Lista Dinâmica</h2>
-        <ul>
-            <li ng-repeat="item in itens">{{ item }}</li>
-        </ul>
-    </div>
+    <main>
+        <h1 class="titulo-atividade"> Atividade 2: Diretivas Essenciais</h1>
+        <div class="lista-de-tarefas">
+                <div class="secao-adicionar-tarefas">
+                    <h2 class="titulo-adicionar">Adicionar Tarefa</h2>
+                    <label for="newTask">Nova tarefa:</label>
+                    <input type="text" ng-model="newTask" placeholder="Adicionar nova tarefa">
+                    <button ng-click="addTask()" class="adicionar-tarefa-button">Adicionar</button>
+                </div>
+            
+            
+                <div class="campo-robo">
+                    <h1 style="text-align: center; color: aqua;">ANGULAR JS ROBO</h1>
+                    <img src="../Atividade 1/img/angular roboto.png" alt="foto do robo do angularJS">
+                    <h2>{{ CHATTYPE1 }}</h2>
+                    <h2>{{ CHATTYPE2 }}</h2>
+                 
+                </div>
 
-    <script>
-        var app = angular.module('meuApp', []);
-        app.controller('meuController', function($scope) {
-            $scope.nome = "";
-            $scope.itens = ["Item 1", "Item 2", "Item 3"];
+                <div class="gestor-de-tarefas"> 
+                    <h2> Gestor de tarefas</h2>
+                    <p>Total de tarefas Cadastradas: <span ng-bind="tasks.length"></span></p>
+                    <!-- ng-show / ng-hide -->
+                    <p ng-show="tasks.length === 0">Nenhuma tarefa adicionada.</p>
+                    <!-- ng-class -->
+                    <ul style="margin: 0;">
+                        <li ng-repeat="task in tasks">
+                            <!-- ng-if -->
+                            <span ng-if="!task.done"> <strong>Tarefa: </strong> {{ task.name }}</span>
+                            <span ng-if="task.done"><s>{{ task.name }}</s></span>
+                            <div class="botoes-gestor-tarefas">
+                                <button ng-click="toggleDone(task)"><i class="bi bi-check-square-fill termina"></i></button>
+                                <button ng-click="removeTask($index)"><i class="bi bi-trash-fill lixeira"></i></button>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        
+        
+        <div class="explicacao-geral">
+
+            <div class="explicacao-classica">
+               <ul>
+                    <h3>Inicialização do Aplicativo</h3>
+                    <li>
+                        <p>Primeiro, iniciamos a aplicação AngularJS definindo um módulo principal. 
+                            Esse módulo é como a base sobre a qual toda a aplicação é construída. 
+                            Ele configura o ambiente AngularJS, permitindo que utilizemos suas funcionalidades.</p>
+                    </li>
+                    <h3>Controlador Principal
+                    </h3>
+                    <li>
+                        <p>No coração da aplicação, temos o controlador principal.
+                             O controlador é responsável por gerenciar a lógica da aplicação e os dados. 
+                             Ele atua como um cérebro, onde definimos como os dados serão manipulados e 
+                             como as ações do usuário serão tratadas.
+                        </p>
+                    </li>
+                    <h3>Interação com o Usuário
+                    </h3>
+                    <li>
+                        <p>A interface da aplicação permite que os usuários adicionem novas tarefas por meio de um campo de entrada e um botão de adicionar. 
+                            Quando o usuário digita o nome de uma tarefa e 
+                            clica no botão, essa informação é capturada e armazenada em uma lista de tarefas gerenciada pelo controlador.
+                        </p>
+                    </li>
+                    <h3>Exibição Dinâmica de Dados
+
+                    </h3>
+                    <li>
+                        <p>Os dados das tarefas são exibidos de maneira dinâmica. Cada vez que uma nova tarefa é adicionada, a lista é atualizada automaticamente na interface.
+                             Isso é possível graças às diretivas AngularJS, que conectam os elementos HTML aos dados do controlador. 
+                             Assim, quando os dados mudam, a interface se atualiza sem a necessidade de recarregar a página.
+                        </p>
+                    </li>
+                    <h3>Manipulação das Tarefas
+                    </h3>
+                    <li>
+                        <p>Além de adicionar, os usuários podem marcar tarefas como concluídas ou removê-las da lista. Cada tarefa na lista tem botões associados que permitem essas ações. 
+                            Quando uma tarefa é marcada como concluída, ela é visualmente diferenciada das tarefas pendentes. 
+                            E, ao remover uma tarefa, ela desaparece imediatamente da lista, mantendo a interface sempre atualizada e refletindo o estado atual dos dados.
+                        </p>
+                    </li>
+
+               </ul>     
+
+               <p></p>
+
+
+               <p></p>
+
+               <p></p>
+               <p></p>
+            </div>
+
+            <div class="campo-laranja">
+                <h2 style="text-align: center; color:aqua; font-weight: bold;">Diretivas utilizadas</h2>
+
+                <div class="formatar-grid-list">
+                    <ul>
+                        <li>Atributo ng-app="myApp".</li>
+                        <li>Atributo ng-controller="MainController"</li>
+                        <li>Diretiva ng-model="newTask"</li>
+                        <li>Diretiva ng-click="addTask()"</li>
+                        <li>Diretiva ng-bind="tasks.length"</li>
+                    </ul>
+                    <ul>
+                        <li>Diretiva ng-show="tasks.length === 0"</li>
+                        <li>Diretiva ng-repeat="task in tasks"</li>
+                        <li>Diretiva ng-if="!task.done"</li>
+                        <li>Diretiva ng-if="task.done"</li>
+                        <li>Diretiva ng-click="toggleDone(task)"</li>
+                        <li>Diretiva ng-click="removeTask($index)"</li>
+                    </ul>
+                </div>
+               
+            </div>
+
+            <div class="exemplo-code">
+                <h2> Exemplo do Código </h2>
+                <pre class="">
+                    <code class="">
+                        &lt;body ng-controller="MainController"&gt;
+    
+            
+                            &lt;main&gt;
+                                &lt;h1 class="titulo-atividade"&gt; Atividade 2: Diretivas Essenciais&lt;/h1&gt;
+                                &lt;div class="lista-de-tarefas"&gt;
+                                    &lt;div&gt;
+                                    &lt;!-- ng-model --&gt;
+                                        &lt;div class="secao-adicionar-tarefas"&gt;
+                                            &lt;h2 class="titulo-adicionar"&gt;Adicionar Tarefa&lt;/h2&gt;
+            
+                                            &lt;div class="triagem"&gt;
+                                                &lt;label for="newTask"&gt;Nova tarefa:&lt;/label&gt;
+                                                &lt;input type="text" ng-model="newTask" placeholder="Adicionar nova tarefa"&gt;
+                                            &lt;/div&gt;
+                                            &lt;button ng-click="addTask()" class="adicionar-tarefa-button"&gt;Adicionar&lt;/button&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="gestor-de-tarefas"&gt; 
+                                        &lt;h2&gt; Gestor de tarefas&lt;/h2&gt;
+                                        &lt;p&gt;Total de tarefas Cadastradas: &lt;span ng-bind="tasks.length"&gt;&lt;/span&gt;&lt;/p&gt;
+                                        &lt;!-- ng-show / ng-hide --&gt;
+                                        &lt;p ng-show="tasks.length === 0"&gt;Nenhuma tarefa adicionada.&lt;/p&gt;
+                                        &lt;!-- ng-class --&gt;
+                                        &lt;ul style="margin: 0;"&gt;
+                                            &lt;li ng-repeat="task in tasks"&gt;
+                                                &lt;!-- ng-if --&gt;
+                                                &lt;span ng-if="!task.done"&gt; &lt;strong&gt;Tarefa: &lt;/strong&gt; {{ task.name }}&lt;/span&gt;
+                                                &lt;span ng-if="task.done"&gt;&lt;s&gt;{{ task.name }}&lt;/s&gt;&lt;/span&gt;
+                                                &lt;div class="botoes-gestor-tarefas"&gt;
+                                                    &lt;button ng-click="toggleDone(task)"&gt;&lt;i class="bi bi-check-square-fill termina"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                    &lt;button ng-click="removeTask($index)"&gt;&lt;i class="bi bi-trash-fill lixeira"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                &lt;/div&gt;
+            
+                                            &lt;/li&gt;
+                                        &lt;/ul&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/main&gt;
+                        &lt;/body&gt;
+                    </code>
+                </pre>
+            </div>
+
+            <div class="explicacao-classica">
+                <h2 style="text-align: center;">Papel das diretivas</h2>
+                <ul>
+                    <li><strong>Estrutura AngularJS no Código</strong>
+                      <ul>
+                        <li><strong>Inicialização do Aplicativo:</strong>
+                          <ul>
+                            <li><span class="code-model-laranja">ng-app="myApp"</span>: Este atributo na tag <span class="code-model-laranja">&lt;html&gt;</span> indica que o aplicativo AngularJS está sendo inicializado e que o módulo chamado <span class="code-model-laranja">myApp</span> é o ponto de entrada. Pense nisso como ligar um aparelho elétrico na tomada; sem isso, o AngularJS não começa a funcionar.</li>
+                          </ul>
+                        </li>
+                        <li><strong>Controlador Principal:</strong>
+                          <ul>
+                            <li><span class="code-model-laranja">ng-controller="MainController"</span>: Este atributo na tag <span class="code-model-laranja">&lt;body&gt;</span> indica que o controlador <span class="code-model-laranja">MainController</span> é responsável por gerenciar o comportamento e os dados dentro do escopo do corpo da página. É como um gerente que supervisiona todas as operações dentro de um departamento específico.</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><strong>Interações e Dados Dinâmicos</strong>
+                      <ul>
+                        <li><strong>Entrada de Dados do Usuário:</strong>
+                          <ul>
+                            <li><span class="code-model-laranja">ng-model="newTask"</span>: Esta diretiva no elemento <span class="code-model-laranja">&lt;input&gt;</span> liga o valor do campo de entrada ao modelo <span class="code-model-laranja">newTask</span> no escopo do controlador. Funciona como uma caixa de coleta onde o usuário pode inserir informações, e essa informação é imediatamente armazenada no controlador.</li>
+                          </ul>
+                        </li>
+                        <li><strong>Ações do Usuário:</strong>
+                          <ul>
+                            <li><span class="code-model-laranja">ng-click="addTask()"</span>: A diretiva <span class="code-model-laranja">ng-click</span> no botão "Adicionar" define que a função <span class="code-model-laranja">addTask</span> será chamada quando o botão for clicado. Isso é como apertar um botão de envio que dispara uma ação específica, neste caso, adicionar uma nova tarefa à lista.</li>
+                          </ul>
+                        </li>
+                        <li><strong>Atualização Dinâmica do Conteúdo:</strong>
+                          <ul>
+                            <li><span class="code-model-laranja">ng-bind="tasks.length"</span>: Esta diretiva exibe o número total de tarefas registradas, atualizando automaticamente conforme a lista <span class="code-model-laranja">tasks</span> é alterada. É semelhante a um contador digital que mostra a quantidade atual de itens em tempo real.</li>
+                            <li><span class="code-model-laranja">ng-show="tasks.length === 0"</span>: Esta diretiva mostra um parágrafo se o número de tarefas for zero. Pensa nisso como uma mensagem de alerta que aparece apenas quando não há itens na lista.</li>
+                          </ul>
+                        </li>
+                        <li><strong>Listagem de Tarefas:</strong>
+                          <ul>
+                            <li><span class="code-model-laranja">ng-repeat="task in tasks"</span>: Esta diretiva itera sobre a lista de tarefas e cria um elemento <span class="code-model-laranja">&lt;li&gt;</span> para cada tarefa. Funciona como uma máquina de clonagem, criando visualmente uma entrada para cada item na lista.</li>
+                          </ul>
+                        </li>
+                        <li><strong>Condições Visuais:</strong>
+                          <ul>
+                            <li><span class="code-model-laranja">ng-if="!task.done"</span> e <span class="code-model-laranja">ng-if="task.done"</span>: Estas diretivas mostram ou escondem elementos com base na condição de cada tarefa (se está concluída ou não). É como ter luzes indicadoras que acendem ou apagam conforme o estado de um item.</li>
+                          </ul>
+                        </li>
+                        <li><strong>Manipulação de Tarefas:</strong>
+                          <ul>
+                            <li><span class="code-model-laranja">ng-click="toggleDone(task)"</span>: Alterna o estado da tarefa entre concluída e não concluída quando o botão correspondente é clicado.</li>
+                            <li><span class="code-model-laranja">ng-click="removeTask($index)"</span>: Remove uma tarefa específica da lista quando o botão de remoção é clicado. Ambas as diretivas <span class="code-model-laranja">ng-click</span> são como botões de ação em um painel de controle, permitindo ao usuário modificar diretamente a lista de tarefas.</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+
+
+            </div>
+        </div>
+
+
+    </main>
+   
+    
+    <footer>
+        <p>&copy; 2024 Plano de Estudo Angular. Todos os direitos reservados.</p>
+    </footer>
+
+
+
+
+
+
+<script>
+     var app = angular.module('myApp', []);
+
+app.controller('MainController', function($scope, $timeout) {
+    $scope.tasks = [];
+    $scope.newTask = '';
+
+
+    $scope.CHATTYPE1="";
+    $scope.CHATTYPE2="";
+
+    $scope.mensagem = "A esquerda você adiciona a tarefa!";
+    $scope.mensagem2 = "A direita você gerencia as tarefas!";
+
+
+
+    function typeEffect(element, text, callback) {
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                $scope[element] += text.charAt(i);
+                i++;
+                $timeout(type, 100);
+            } else if (callback) {
+                callback();
+            }
+        }
+        type();
+    }
+
+    function startTypingEffects() {
+        typeEffect('CHATTYPE1', $scope.mensagem, function() {
+            typeEffect('CHATTYPE2', $scope.mensagem2);
         });
-    </script>
+    }
+
+    $scope.addTask = function() {
+        if ($scope.newTask.trim() !== '') {
+            $scope.tasks.push({ name: $scope.newTask, done: false });
+            $scope.newTask = '';
+        }
+    };
+
+    $scope.removeTask = function(index) {
+        $scope.tasks.splice(index, 1);
+    };
+
+    $scope.toggleDone = function(task) {
+        task.done = !task.done;
+    };
+
+    startTypingEffects();
+});
+</script>
 </body>
 </html>

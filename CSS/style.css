@@ -1,0 +1,70 @@
+@import url('../packs/node_modules/bootstrap-icons/font/bootstrap-icons.css');
+@import url('styles/header.css');
+@import url('styles/footer.css');
+@import url('styles/page-components/balao-laranja-explicacao.css');
+@import url('styles/page-components/code-area.css');
+@import url('styles/page-components/explicacao-classico.css');
+@import url('styles/page-components/referencias.css');
+
+:root{
+
+    --color-vermelho-angular: #b52e31;
+    --color-azul-angular: #00ffdd;
+}
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f4f4f4;
+color: #333;
+  }
+main {
+padding: 2em;
+  }
+section {
+
+    display: grid;
+
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    justify-items: center
+
+  }
+
+.atividades{
+    margin: 0 25% 0 25%;
+    margin-bottom: 2em;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+.atividades a{
+text-decoration: none;
+color: white;
+font-weight: bold;
+padding: 10px;
+border-radius: 10px;
+background-color: var(--color-vermelho-angular);
+
+}
+
+.atividades img{
+
+    width: 25%;
+    border: 20px;
+    margin: 10px;
+
+
+
+}
+
+section h2 {
+margin-top: 0;
+  }
+
+
+  

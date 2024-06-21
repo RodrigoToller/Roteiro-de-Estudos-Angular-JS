@@ -1,0 +1,18 @@
+.explicacao-classica{
+
+    border: solid 2px black;
+    padding: 1.8rem;
+    margin: 2rem
+
+
+}
+
+.explicacao-classica ul{
+
+    padding: 0;
+    margin: 30px;
+    display: grid;
+    gap: 10px;
+
+
+}
