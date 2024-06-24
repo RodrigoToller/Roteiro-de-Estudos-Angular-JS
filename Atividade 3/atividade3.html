@@ -6,7 +6,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="at3.css">
-    <title>Document</title>
+    <link rel="icon" href="../Atividade 1/img/angular roboto.png">
+    <title>Dropdown Dinâmico e Elementos Condicionais - Atividade 3 - AngularJS</title>
 </head>
 <body ng-controller="meuController">
     <header>
@@ -18,8 +19,8 @@
             <div class="conteudo-principal">
                 <div class="dropdown-section box-person">
                     <h2>Dropdown Dinâmico</h2>
-                    <select ng-model="selecionado" ng-options="item for item in itens"></select>
-                    <p>Selecionado: {{ selecionado }}</p>
+                    <select ng-model="teste" ng-options="item for item in itens"></select>
+                    <p>Selecionado: {{ teste }}</p>
                 </div>
                 <div class="condicional-section box-person">
                     <h2>Elementos Condicionais</h2>
@@ -30,7 +31,6 @@
             </div>
         </div>
         
-
         <div class="grid-separador"> 
             <div class="explicacao-classica">
                 <h2 style="color: rgb(0, 161, 161);"> O que é um Dropdown Dinâmico? </h2>
@@ -69,31 +69,26 @@
             </div>
         </div>
 
-
         <div class="configuracao-robo">
-
             <div class="condicional-section centralizar-textos box-person-controlador-de-mensagem">
                 <h2>Controlador de Mensagens</h2>
-                <p> Aperte o botão para Alterar a visualização da mensagem do Robo AngularJS</p>
+                <p> Aperte o botão para Iniciar o chat do Robo AngularJS</p>
                 <button ng-click="mostrarMsgRobo = !mostrarMsgRobo">Visualizar Mensagem</button>
             </div>
-
 
             <div class="campo-robo">
                 <h1 style="text-align: center;">ANGULAR JS ROBO</h1>
                 <img src="../Atividade 1/img/angular roboto.png" alt="foto do robo do angularJS">
-                <h2 ng-show="mostrar"> {{ selecionado }}</h2>
-                <h2 ng-if="mostrar">{{ CHATTYPE2 }}</h2>
+                <h2 ng-show="mostrarMsgRobo">{{ textoRobo }}</h2>
             </div>
 
             <div class="dropdown-section box-person-controlador-de-mensagem">
                 <h2>Dropdown Dinâmico</h2>
-                <select ng-model="selecionado" ng-options="item for item in objeto.chatOptions1"></select>
-                <p>Selecionado: {{ selecionado }}</p>
+                <p>Selecione uma opção para ver a mensagem do Robo</p>
+                <select ng-model="selecionado" ng-options="item for item in objeto" ng-change="atualizarTextoRobo()"></select>
             </div>
         </div>
         
-
         <div class="referencias">
             <h2> Recursos Adicionais </h2>
             <ul>
@@ -102,25 +97,81 @@
                 <li><a href="https://www.w3schools.com/angular/ng_ng-if.asp#:~:text=AngularJS%20ng%2Dif%20Directive&text=The%20ng%2Dif%20directive%20removes,is%20added%20in%20the%20DOM.">W3Schools - AngularJS ng-if</a></li>
             </ul>
         </div>
-
     </main>
     <footer>
         <p>&copy; 2024 Plano de Estudo Angular. Todos os direitos reservados.</p>
     </footer>
     <script>
-        var app = angular.module('meuApp', []);
-        app.controller('meuController', function($scope) {
+    var app = angular.module('meuApp', []);
+    app.controller('meuController', function($scope, $timeout) {
 
-            $scope.objeto = { 
-                chatOptions1 : ["Olá! Como posso ajudar?", "Qual é a sua dúvida?", "Estou aqui para ajudar!"],
-                chatOptions2 : ["Olá! Como posso ajudar?", "Qual é a sua dúvida?", "Estou aqui para ajudar!"],
-                chatOptions3 : ["Olá! Como posso ajudar?", "Qual é a sua dúvida?", "Estou aqui para ajudar!"],
-            };
+    $scope.objeto = ["Qual é o seu nome?", "Me conte uma curiosidade!", "O que é Dropdown Dinâmico?"];
+      
+    $scope.itens = ["A","B","C"];
+    $scope.mostrar = true;
 
-            $scope.itens = ["Opção 1", "Opção 2", "Opção 3"];
-            $scope.mostrar = true;
-        });
+    // Inicializar texto do robo
+    $scope.textoRobo = "Selecione uma opção para ver a mensagem do Robo";
 
+
+    // Função para efeito de digitação
+ 
+
+    function typeEffect(element, text, callback) {
+            $scope[element] = "";  // Resetar o texto antes de iniciar o efeito
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    $scope[element] += text.charAt(i);
+                    i++;
+                    $timeout(type, 100);
+                } else if (callback) {
+                    callback();
+                }
+            }
+            type();
+        }
+
+
+    // Função para atualizar o texto do robo com base na seleção
+    $scope.atualizarTextoRobo = function() {
+        console.log("Lista de itens:", $scope.itens); // Log da lista de itens
+        console.log("Valor selecionado:", $scope.selecionado); // Log do valor selecionado
+
+        // Obter os valores selecionados de todos os selects
+      
+
+
+
+        var mensagens = [
+            "Olá, eu sou o Robo AngularJS.",
+            "Você Sabia que o Angular JS tem 13 anos?",
+            "Um Dropdown Dinâmico é uma lista suspensa que atualiza suas opções com base em uma seleção anterior ou uma fonte de dados em tempo real."
+        ];
+
+
+        if($scope.selecionado == "Qual é o seu nome?"){
+            $scope.textoRobo = mensagens[0];
+            typeEffect('textoRobo', mensagens[0]);
+
+        } else if($scope.selecionado == "Me conte uma curiosidade!"){
+            $scope.textoRobo = mensagens[1];
+            typeEffect('textoRobo', mensagens[1]);
+        } else if($scope.selecionado == "O que é Dropdown Dinâmico?"){
+            $scope.textoRobo = mensagens[2];
+            typeEffect('textoRobo', mensagens[2]);
+        } else {
+            $scope.textoRobo = "Selecione uma opção para ver a mensagem do Robo";
+        }
+
+
+    };
+
+    // Inicializar valor selecionado para chamar a função ao carregar
+    $scope.selecionado = $scope.itens[0];
+    console.log("Selecionado inicial: ", $scope.selecionado);
+    $scope.atualizarTextoRobo();
+});
     </script>
 </body>
 </html>

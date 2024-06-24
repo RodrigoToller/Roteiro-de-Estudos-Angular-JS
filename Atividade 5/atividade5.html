@@ -1,28 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" ng-app="meuApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="at5.css">
+    <title>Atividade 5 - Watchers</title>
+    <style>
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
 </head>
-<body>
-    <div ng-controller="meuController">
-        <h2>Watchers</h2>
-        <input type="text" ng-model="nome" placeholder="Digite seu nome">
-        <p>Nome Anterior: {{ nomeAnterior }}</p>
-        <p>Nome Atual: {{ nome }}</p>
+<body ng-controller="cadastroController">
+
+    <header>
+        <a class="link-voltar" href="../index.html">
+            <h1><i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>Plano de Estudo Angular<i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>  
+          </h1></a>
+    </header>
+
+    <div >
+        <form name="cadastroForm" ng-submit="submitForm()" class="formulario-area">
+            <div></div>
+            <div class="triagem">
+                <label>Nome Completo:</label>
+                <input type="text" ng-model="usuario.nomeCompleto" placeholder="Digite seu nome completo" required>
+                <span class="error" ng-show="cadastroForm.nomeCompleto.$touched && !usuario.validoNomeCompleto">Nome completo é obrigatório.</span>
+
+                <label>CPF:</label>
+                <input type="text" ng-model="usuario.cpf" placeholder="Digite seu CPF" required>
+                <span class="error" ng-show="cadastroForm.cpf.$touched && !usuario.validoCPF">CPF inválido.</span>
+
+                <label>RG:</label>
+                <input type="text" ng-model="usuario.rg" placeholder="Digite seu RG" required>
+                <span class="error" ng-show="cadastroForm.rg.$touched && !usuario.validoRG">RG é obrigatório.</span>
+
+                <label>Data de Nascimento:</label>
+                <input type="date" ng-model="usuario.dataNascimento" required>
+                <span class="error" ng-show="cadastroForm.dataNascimento.$touched && !usuario.validoDataNascimento">Data de nascimento é obrigatória.</span>
+
+                <label>Sexo:</label>
+                <select ng-model="usuario.sexo" required>
+                    <option value="">Selecione</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                <span class="error" ng-show="cadastroForm.sexo.$touched && !usuario.validoSexo">Sexo é obrigatório.</span>
+
+                <label>Endereço:</label>
+                <input type="text" ng-model="usuario.endereco" placeholder="Digite seu endereço" required>
+                <span class="error" ng-show="cadastroForm.endereco.$touched && !usuario.validoEndereco">Endereço é obrigatório.</span>
+                <button type="submit">Cadastrar Informações</button>
+
+            </div>
+        </form>
     </div>
+    <div ng-show="formEnviado" class="mensagem-do-forms">
+        <div class="pop-up">
+            <p class="success" ng-show="formValido">Formulário enviado com sucesso!</p>
+            <p class="error" ng-show="!formValido">Formulario invalido! por favor preencha novamente com as informações corretas!</p>
+            <button ng-click="resetForm()">OK</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Plano de Estudo Angular. Todos os direitos reservados.</p>
+    </footer>
 
     <script>
         var app = angular.module('meuApp', []);
-        app.controller('meuController', function($scope) {
-            $scope.nome = "";
-            $scope.nomeAnterior = "";
+        app.controller('cadastroController', function($scope, $timeout) {
+            $scope.usuario = {
+                nomeCompleto: "",
+                cpf: "",
+                rg: "",
+                dataNascimento: "",
+                sexo: "",
+                endereco: "",
+                validoNomeCompleto: true,
+                validoCPF: true,
+                validoRG: true,
+                validoDataNascimento: true,
+                validoSexo: true,
+                validoEndereco: true
+            };
 
-            $scope.$watch('nome', function(newValue, oldValue) {
-                $scope.nomeAnterior = oldValue;
-            });
+            $scope.formEnviado = false;
+            $scope.formValido = false;
+
+            function validarCPF(cpf) {
+                // Lógica simples de validação de CPF
+                return cpf.length === 11;
+            }
+
+            function validarCampos() {
+                $scope.usuario.validoNomeCompleto = !!$scope.usuario.nomeCompleto;
+                $scope.usuario.validoCPF = validarCPF($scope.usuario.cpf);
+                $scope.usuario.validoRG = !!$scope.usuario.rg;
+                $scope.usuario.validoDataNascimento = !!$scope.usuario.dataNascimento;
+                $scope.usuario.validoSexo = !!$scope.usuario.sexo;
+                $scope.usuario.validoEndereco = !!$scope.usuario.endereco;
+            }
+
+            $scope.submitForm = function() {
+                validarCampos();
+                $scope.formEnviado = true;
+                $scope.formValido = $scope.usuario.validoNomeCompleto &&
+                                    $scope.usuario.validoCPF &&
+                                    $scope.usuario.validoRG &&
+                                    $scope.usuario.validoDataNascimento &&
+                                    $scope.usuario.validoSexo &&
+                                    $scope.usuario.validoEndereco;
+            };
+
+            $scope.resetForm = function() {
+                $scope.formEnviado = false;
+                $scope.formValido = false;
+                $scope.usuario = {
+                    nomeCompleto: "",
+                    cpf: "",
+                    rg: "",
+                    dataNascimento: "",
+                    sexo: "",
+                    endereco: "",
+                    validoNomeCompleto: true,
+                    validoCPF: true,
+                    validoRG: true,
+                    validoDataNascimento: true,
+                    validoSexo: true,
+                    validoEndereco: true
+                };
+                $scope.cadastroForm.$setPristine();
+                $scope.cadastroForm.$setUntouched();
+            };
         });
     </script>
 </body>

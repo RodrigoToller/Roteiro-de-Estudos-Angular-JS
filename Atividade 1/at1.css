@@ -17,6 +17,15 @@
     color: white;
 
 }
+
+.div-grid-robo{
+
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
 img{
     margin: 0 20%;
     width: 250px;
@@ -27,9 +36,11 @@ img{
     border-radius: 20px;
     padding: 2em;
     background-color: var(--color-vermelho-angular);
+
 }
 .campo-robo h2{
 
+    text-align: center;
     color: white;
     border-radius: 20px;
     padding: 1rem;

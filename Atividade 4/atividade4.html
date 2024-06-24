@@ -1,28 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" ng-app="meuApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <style>
-        .vermelho { color: red; }
-        .verde { color: green; }
-    </style>
-    <title>Document</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="at4.css">
+    <link rel="icon" href="../Atividade 1/img/angular roboto.png">
+    <title>CSS + ANGULAR JS - Atividade 4 - AngularJS</title>
 </head>
-<body>
-    <div ng-controller="meuController">
-        <h2>Alteração Condicional de Classes</h2>
-        <input type="checkbox" ng-model="isVermelho"> Vermelho
-        <p ng-class="{'vermelho': isVermelho, 'verde': !isVermelho}">
-            Este texto muda de cor.
-        </p>
-    </div>
+<body ng-controller="meuController" ng-class="{'body-noturno': isNoturno}">
+
+    <header ng-class="{'background-noturno': isNoturno}">
+        <a class="link-voltar" href="../index.html">
+            <h1><i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>Plano de Estudo Angular<i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>  
+          </h1></a>
+          <label class="checkbox-container botao-noturno-classe">
+            <input type="checkbox" ng-model="isNoturno" style="display: none;">
+            <i class="bi" ng-class="{'bi-moon': isNoturno, 'bi-brightness-high': !isNoturno}"></i> Modo Noturno
+        </label>
+    </header>
+    <main>
+        <h1 class="titulo-atividade">CSS + ANGULAR JS - Atividade 4 </h1>
+        <section class="exemplos-basicos" ng-class="{'section-noturno': isNoturno}">
+            <div class="alteracao-basica-condicional">
+                <div class="alt-bsc-1">
+                    <h2>Alteração Condicional de Classes</h2>
+                    <label>
+                        <input type="checkbox" ng-model="isVermelho"> Vermelho
+                    </label>
+                    <p ng-class="{'vermelho': isVermelho, 'verde': !isVermelho}">
+                        Este texto muda de cor.
+                    </p>
+                </div>
+                <div class="alt-bsc-2">
+                    <h2>Estilização Adicional</h2>
+                    <label>
+                        <input type="checkbox" ng-model="isNegrito"> Negrito
+                    </label>
+                    <label>
+                        <input type="checkbox" ng-model="isItalico"> Itálico
+                    </label>
+                    <p ng-class="{'negrito': isNegrito, 'italico': isItalico}">
+                        Este texto pode ser estilizado como negrito e/ou itálico.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lista-tarefas-custom">
+                <h2>Lista de Tarefas</h2>
+                <input type="text" ng-model="novaTarefa" placeholder="Adicione uma nova tarefa">
+                <button ng-click="adicionarTarefa()">Adicionar</button>
+                <ul >
+                    <li class="custom-list-item-tarefas" ng-repeat="tarefa in tarefas" ng-class="{'tarefa-completa': tarefa.completa}" style="gap: 20px;">
+                        <input type="checkbox" ng-model="tarefa.completa"> <strong>Tarefa: </strong> {{tarefa.texto}}
+                        
+                        <button ng-click="removerTarefa($index)"><i class="bi bi-trash3-fill"></i></button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="formulario-contato">
+                <h2>Formulário de Contato</h2>
+                <div ng-class="{'ocultar-form': formularioEnviado}">
+                    <form class="formulario-contato-itens" ng-submit="enviarFormulario()" name="formContato" novalidate ng-class="{'formulario-valido': formContato.$valid, 'formulario-invalido': formContato.$invalid}">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" ng-model="formulario.nome" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" ng-model="formulario.email" required>
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" ng-model="formulario.mensagem" required></textarea>
+                        
+                        <button type="submit" ng-disabled="formContato.$invalid">Enviar</button>
+                    </form>
+                </div>
+                <p class="mensagem-forms-sucesso" ng-if="formularioEnviado">Formulário enviado com sucesso!</p>
+            </div>
+        </section>
+        
+        <section class="exemplos-basicos" ng-class="{'section-noturno': isNoturno}">
+            <div class="explicacao-classica" ng-class="{'explicacao-classica-noturno' : isNoturno}">
+            <h1>Alteração Basica Condicional</h1>    
+            <ul>
+                <li> <strong>Função do ng-class</strong> </li>
+                <p> Alteração Condicional de Classes: ng-class é usado para aplicar classes CSS a elementos HTML com base no valor das variáveis do escopo. 
+                    <br/><br/>Ele permite que a aparência dos elementos seja atualizada dinamicamente em resposta a mudanças no estado da aplicação.</p>
+                <li> <strong>Papel do CSS</strong> </li>
+                <p> Definição de Estilos: Classes CSS definem os estilos que serão aplicados aos elementos. <br/><br/> 
+                    Por exemplo, classes como .vermelho, .verde, .negrito, e .italico são definidas no CSS para 
+                    alterar a cor do texto ou aplicar estilos de negrito e itálico.
+                </p> 
+                <li> <strong>Interação ng-class e CSS </strong></li>
+                <p> Vermelho/Verde: Um checkbox controla a variável isVermelho. Se isVermelho for verdadeiro, ng-class aplica a classe .vermelho ao parágrafo, mudando a cor do texto para vermelho. <br/><br/> Se for falso, aplica .verde, mudando a cor para verde.<br/><br/>
+                    Negrito/Itálico: Outros checkboxes controlam as variáveis isNegrito e isItalico.<br/><br/> Dependendo do estado dessas variáveis, ng-class aplica .negrito e/ou .italico ao parágrafo, estilizando o texto conforme necessário.
+                </p>     
+            </ul>
+                
+
+            </div>
+
+            <div class="campo-laranja" ng-class="{'background-noturno': isNoturno}">
+                <h1>Lista de Tarefas</h1>    
+                <ul>
+                    <li> <strong>Função do ng-class</strong> </li>
+                    <p> Estilização Condicional de Tarefas: ng-class é usado para aplicar a classe .tarefa-completa a itens da lista de tarefas que foram marcados como completos.<br/><br/>
+                         A aplicação dessa classe é baseada no estado da propriedade completa de cada tarefa.</p>
+                    <li> <strong>Papel do CSS</strong> </li>
+                    <p> Definição de Estilos: A classe CSS .tarefa-completa define um estilo que risca o texto, indicando visualmente que a tarefa foi concluída.
+                    </p> 
+                    <li> <strong>Interação ng-class e CSS </strong></li>
+                    <p> Tarefas Concluídas: Cada tarefa na lista é renderizada com uma checkbox que controla se a tarefa está completa. <br/><br/>
+                        Quando a checkbox é marcada, a propriedade completa da tarefa é definida como verdadeira, e ng-class aplica a classe 
+                        .tarefa-completa ao item da lista, riscando o texto para indicar que a tarefa foi concluída.
+                    </p>     
+                </ul>
+            </div>
+            <div class="explicacao-classica" ng-class="{'explicacao-classica-noturno' : isNoturno}">
+                <h1>Formulário de Contato</h1>    
+                <ul>
+                    <li> <strong>Função do ng-class</strong></li>
+                    <p> Validação do Formulário: ng-class é usado para aplicar classes CSS com base no estado de validação do formulário. <br/><br/> Por exemplo, pode-se aplicar classes diferentes ao formulário quando ele está válido ou inválido.
+                        Feedback Visual de Submissão: ng-class também pode ser usado para alternar entre a exibição do formulário e uma mensagem de sucesso após o envio do formulário.</p>
+                    <li> <strong>Papel do CSS</strong> </li>
+                    <p> Definição de Estilos: Classes CSS como .formulario-valido e .formulario-invalido definem estilos visuais para os diferentes estados do formulário.<br/><br/>
+                         Por exemplo, um formulário válido pode ter um fundo verde claro, enquanto um formulário inválido pode ter um fundo vermelho claro.
+                    </p> 
+                    <li> <strong>Interação ng-class e CSS </strong></li>
+                    <p> Validação Visual: Quando os campos do formulário são preenchidos corretamente, a variável formularioValido é definida como verdadeira, e ng-class aplica a classe 
+                        .formulario-valido, estilizando o formulário para indicar que está correto. <br/><br/>Se o formulário estiver inválido, ng-class aplica a classe .formulario-invalido.<br/><br/>
+                        Exibição Condicional: Após o envio do formulário, ng-class pode ocultar o formulário e exibir uma mensagem de sucesso baseada na variável formularioEnviado.
+                    </p>     
+                </ul>
+            </div>
+        </section>
+
+        <section class="dicas-para-usuario">
+            <div class="campo-laranja" ng-class="{'background-noturno': isNoturno}" >
+                <h2> ATENÇÃO - VOCÊ PERCEBEU??</h2>
+                <p> Nessa pagina, além de todo conteudo explicado até o momento, fizemos um componente que muda totalmente a estilização de nossa pagina, você encontrou? </p>
+            </div>
+            <div class="dica-botao">
+                <h2><i class="bi bi-lightbulb-fill"></i> DICA - ONDE ENCONTRAR O BOTÃO!</h2>
+                <p> Consegue identificar o sol com o texto "modo noturno"? lá é nosso objetivo, va até o header da pagina, e clique para ver o que acontece!</p>
+                <img src="../img/at4/dica-item-noturno.png" alt="dica item noturno">
+            </div>
+        </section>
+       
+
+        <div class="referencias" ng-class="{'referencia-noturno': isNoturno}">
+            <h2>Recursos Adicionais</h2>
+            <ul>
+                <li><a href="https://docs.angularjs.org/api/ng/directive/ngClass">AngularJS Documentation - ngClass</a></li>
+                <li><a href="https://www.w3schools.com/angular/ng_ng-class.asp">W3Schools - AngularJS - ng-class </a></li>
+            </ul>
+        </div>
+    </main>
+    <footer ng-class="{'background-noturno': isNoturno}">
+        <p>&copy; 2024 Plano de Estudo Angular. Todos os direitos reservados.</p>
+    </footer>
 
     <script>
         var app = angular.module('meuApp', []);
         app.controller('meuController', function($scope) {
             $scope.isVermelho = true;
+            $scope.isNoturno = false;
+            $scope.isNegrito = false;
+            $scope.isItalico = false;
+            
+            $scope.tarefas = [];
+            $scope.novaTarefa = '';
+            
+            $scope.adicionarTarefa = function() {
+                if ($scope.novaTarefa.trim() !== '') {
+                    $scope.tarefas.push({ texto: $scope.novaTarefa, completa: false });
+                    $scope.novaTarefa = '';
+                }
+            };
+
+            $scope.removerTarefa = function(index) {
+                $scope.tarefas.splice(index, 1);
+            };
+
+            $scope.formulario = {};
+            $scope.formularioEnviado = false;
+
+            $scope.enviarFormulario = function() {
+                if ($scope.formulario.nome && $scope.formulario.email && $scope.formulario.mensagem) {
+                    $scope.formularioEnviado = true;
+                    console.log($scope.formularioEnviado);
+                }
+            };
         });
     </script>
 </body>
