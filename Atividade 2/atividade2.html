@@ -6,27 +6,32 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="at2.css">
-    <link rel="icon" href="../Atividade 1/img/angular roboto.png">
+    <link rel="icon" href="../img/angular roboto.png">
     <title>Diretivas Essenciais - Atividade 2 - AngularJS</title>
 </head>
-<body ng-controller="MainController">
+<body ng-controller="MainController" class="background-vermelho">
     <header>
-        <a class="link-voltar" href="../index.html"><h1><i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>Plano de Estudo Angular<i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i></h1></a>
+        <h1> <a href="../secao-atividades/secao-atividade.html"> <i style="margin: 10px;" class="bi bi-dice-2-fill"></i>  Atividade 2 - Diretivas Essenciais </a></h1>
     </header>
     <main>
-        <h1 class="titulo-atividade"> Atividade 2: Diretivas Essenciais</h1>
         <div class="lista-de-tarefas">
                 <div class="secao-adicionar-tarefas">
                     <h2 class="titulo-adicionar">Adicionar Tarefa</h2>
-                    <label for="newTask">Nova tarefa:</label>
-                    <input type="text" ng-model="newTask" placeholder="Adicionar nova tarefa">
-                    <button ng-click="addTask()" class="adicionar-tarefa-button">Adicionar</button>
+                    <div>
+                        <label for="newTask">Nova tarefa:</label>
+                        <br>
+                        <input type="text" ng-model="newTask" placeholder="Adicionar nova tarefa">
+                    </div>
+                    <div>
+                        <button ng-click="addTask()" class="adicionar-tarefa-button">Adicionar</button>
+
+                    </div>
                 </div>
             
             
                 <div class="campo-robo">
-                    <h1 style="text-align: center; color: aqua;">ANGULAR JS ROBO</h1>
-                    <img src="../Atividade 1/img/angular roboto.png" alt="foto do robo do angularJS">
+                    <h1 >ANGULAR JS ROBO</h1>
+                    <img src="../img/angular roboto.png" alt="foto do robo do angularJS">
                     <h2>{{ CHATTYPE1 }}</h2>
                     <h2>{{ CHATTYPE2 }}</h2>
                 </div>

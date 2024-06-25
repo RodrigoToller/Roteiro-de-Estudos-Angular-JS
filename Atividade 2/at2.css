@@ -1,10 +1,9 @@
-.titulo-atividade{
-    background-color: rgb(0, 161, 161);
-    padding: 20px;
-    text-align: center;
-    border-radius: 20px;
-    color: white;
-    margin: 0 120px 0 120px;
+
+.background-vermelho{
+
+    background-image: url('../img/backghround.png');
+
+
 }
 
 
@@ -14,7 +13,10 @@
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
 
-    
+    text-align: center;
+
+
+
     margin: 20px;
     padding: 40px;
    
@@ -22,48 +24,51 @@
 
 
 }
-img{
 
-    width: 250px;
-    height: 250px;
-}
 .campo-robo{
+
     display: grid;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
+
+    padding: 50px;
+
     border: solid 1px black;
+
     border-radius: 20px;
-    padding: 2em;
-    background-color: var(--color-vermelho-angular);
+    justify-items: center;
+
+    background-color: #e0030686;
+    border: solid 6px #ff00007c;
+    box-shadow: 5px 5px 25px rgb(184, 0, 0);
+    border-radius: 70px;
+
+    gap: 10px;
+
+}
+.campo-robo h1{
+
+
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    border-radius: 50px;
+    background-color: rgb(94, 18, 18);
+
+
 }
 .campo-robo h2{
 
+    padding: 20px;
+    text-align: center;
     color: white;
     border-radius: 20px;
-    padding: 1rem;
-    background-color: rgb(0, 161, 161);
+    border-radius: 50px;
+    background-color: rgb(94, 18, 18);
 }
-.campo-robo a{
-
-    margin: 0 0 0 42%;
-
-
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgb(250, 104, 46)
-
-
-}
-
-
-.campo-robo h2{
+.campo-robo img{
+    margin-left: 10px;
+    align-self: center;
     text-align: center;
 }
-
 .formatar-grid-list{
     
     display: flex;
@@ -71,17 +76,19 @@ img{
 
 
 }
-
 .lista-de-tarefas .titulo-adicionar{
 
     align-self: top;
     text-align: center;
+    
     font-size: 1.8rem;
     padding: 10px;
     border-radius: 12px;
+   
     text-transform: uppercase;
-    color: var(--color-vermelho-angular)
- }
+
+    color: white;
+}
 
 
 .secao-adicionar-tarefas{
@@ -89,10 +96,10 @@ img{
 
     display: grid;
 
-    background-color: wheat;
+    background-color: rgba(182, 13, 13, 0.719);
 
     padding: 25px;
-    border: 1px solid #000;
+    border: 1px solid #ff05057a;
     border-radius: 10px;
 
     justify-items: center;
@@ -102,25 +109,31 @@ img{
 
 .secao-adicionar-tarefas label{
 
+
+
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1.5em;
-    background-color: var(--color-vermelho-angular);
     align-self: center;
     color: white;
-    padding: 10px;
-    border-radius: 10px;
+
+   
 
 }
 
 .secao-adicionar-tarefas input{
 
-    width: 100%;
+    margin-top: 10px;
     height: 2rem;
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid #000;
+    background-color: rgb(116, 1, 1);
+    color: white;
+    border: 1px solid #cf00009d;
 
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+    font-size: 1.2rem;
 
 }
 
@@ -165,9 +178,11 @@ img{
     background-color: rgba(252, 141, 38, 0.562);
 }
 .adicionar-tarefa-button{
-    background-color: var(--color-vermelho-angular);
+   
+
+
     color: white;
-    padding: 10px;
+    padding: 15px;
     font-weight: bold;
     border: none;
     border-radius: 10px;
@@ -176,9 +191,18 @@ img{
     text-transform: uppercase;
     transition: 0.3s;
     width: 100%;
+
+
+    background-color: rgb(94, 3, 3);
+    border: 1px solid #500000;
+   
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    font-size: 1.2rem;
+
 }
 .adicionar-tarefa-button:hover{
-    background-color: rgb(4, 131, 131);
+    background-color: rgb(24, 1, 1);
     font-size: 1.5rem;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
@@ -201,7 +225,7 @@ img{
 
 .code-model-laranja{
 
-    color: var(--color-vermelho-angular);
+    color: yellow;
     font-weight: bold;
     font-style: italic;
 
