@@ -9,6 +9,10 @@
 
 
 
+
+
+
+
 .div-grid-robo{
 
 
@@ -21,6 +25,8 @@
 }
 
 img{
+    margin-left: 10px;
+    align-self: center;
     text-align: center;
 }
 .campo-robo{
@@ -88,7 +94,7 @@ img{
 
 .code-model-laranja{
 
-    color: rgb(7, 5, 158);
+    color: rgb(255, 210, 8);
     font-weight: bold;
     font-style: italic;
 

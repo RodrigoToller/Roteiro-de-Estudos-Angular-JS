@@ -1,12 +1,12 @@
 .referencias{
     text-align: center;
     padding: 25px;
-    border: solid 2px black;
+    border: solid 2px rgba(255, 217, 1, 0.781);
     background-color: rgba(243, 117, 0, 0.829);
     color: white;
     font-weight: bold;
     border-radius: 40px;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px rgb(252, 209, 18);
 }
 .referencias ul{
 

@@ -18,3 +18,26 @@ header h1 {
 
   font-weight: 600;
 }
+
+
+
+
+header a{
+
+
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+
+  text-decoration: none;
+  transition: 1.2s;
+
+
+}
+
+header a:hover{
+
+  color: yellow;
+
+}
