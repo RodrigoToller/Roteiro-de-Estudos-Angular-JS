@@ -1,66 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" ng-app="home-page">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/icon-title/angular-title.png">
-    <title>Plano de Estudo Angular</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page - Trilha Angular JS</title>
+  <link rel="stylesheet" href="CSS/index-custom.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <link rel="icon" href="img/icon-title/angular-title.png">
 
-    <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body>
-    <header>
-        <h1><i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>Plano de Estudo Angular<i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i></h1>
-      </header>
+<body ng-controller="mainCtrl"  class="background-geral " ng-class="{'background-geral-noturno': isDark, '': !isDark}">
+  <main>
+    <div class="quadrado-principal" >
+      <div></div>
+      <div class="quadrado-vermelho"  ng-class="{'quadrado-noturno' : isDark, '' : !isDark }">
+        <label class="button-modo-noturno" ng-class="{'button-modo-noturno': !isDark, 'button-modo-noturno-ativo' : isDark}">
+          <input type="checkbox" style="display: none;" ng-model="isDark"  class="button-modo-noturno">
+          <i class="bi" ng-class="{'bi-moon': isDark, 'bi-brightness-high': !isDark}"></i> <b class="mensagem-noturna" > MN </b>
+        </label>
+        <img src="img/angular foto.png" alt="" ng-class="{'' : !isDark, 'hider': isDark}">
+        <img src="img/angulAR AZUL SOMBRA.png" alt="" class="hider" ng-class="{'' : isDark, 'hider': !isDark}">
+
+        <h1>Seja bem vindo ao <br>Plano de estudo Angular JS</h1>
+        <h2>Navegue pelos tópicos e links para acessar as <br> atividades realizadas neste plano de estudos</h2>
+        <a href="secao-atividades/secao-atividade.html" class="button-acessar" ng-class="{'button-acessar-noturno' : isDark}" >Acessar</a>
+      </div>
       
-      <main>
-        <section class="boas-vindas">
-            <img src="img/angular foto.png" alt="foto-angular" style="width: 10%;">
-            <h2> Seja bem vindo ao Plano de Estudo ANGULAR JS!</h1>
-            <p> Navegue peles topicos e links para acessar as atividades realizadas neste plano de estudos!</p>
-        </section>
-        <section class="atividades">
-          <h2>Atividade 1: Introdução ao Angular</h2>
-          <img src="img/preview atividade 1.png" alt="atividade 1">
-          <p>Pequena pagina AngularJS com um módulo e controlador básico.</p>
-          <a href="Atividade 1/atividade1.html"> acessar </a>
-        </section>
-        <section class="atividades">
-          <h2>Atividade 2: Diretivas Essenciais</h2>
-          <img src="img/preview atividade 2.png" alt="atividade 2">
+    </div>
+  </main>
 
-          <p> Criação de uma Solução de Gestão de Tarefas Usando Diretivas e Controladores no AngularJS.</p>
-          <a href="Atividade 2/atividade2.html"> acessar </a>
-        </section>
-        
-        <section class="atividades">
-          <h2>Atividade 3: Diretivas Avançadas</h2>
-          <img src="img/preview atividade 3.png" alt="atividade 3">
-          <p>formulários com dropdowns dinâmicos, elementos condicionais.</p>
-          <a href="Atividade 3/atividade3.html"> acessar </a>
 
-        </section>
-        
-        <section class="atividades">
-          <h2>Atividade 4: CSS + AngularJS</h2>
-          <img src="img/preview atividade 4.png" alt="atividade 4">
-          <p>Como turbinar seu CSS com AngularJS.</p>
-          <a href="Atividade 4/atividade4.html">acessar</a>
+<script>
+  var app = angular.module('home-page', []);
+  app.controller('mainCtrl', function($scope) {
+    $scope.isDark = false;
 
-        </section>
-        
-        <section class="atividades">
-          <h2>Atividade 5: Watchers</h2>
-          <img src="" alt="">
+    $scope.changeTheme = function() {
+      $scope.isDark = !$scope.isDark;
+    }
 
-          <p>implementação de watchers para monitorar mudanças de dados.</p>
-          <a href="Atividade 5/atividade5.html"> acessar </a>
+  });
 
-        </section>
-      </main>
-      
-      <footer>
-        <p>&copy; 2024 Plano de Estudo Angular. Todos os direitos reservados.</p>
-      </footer>
+
+  // Seleciona o elemento <label>
+    const hoverTarget = document.querySelector('.mensagem-noturna');
+      const labelText = hoverTarget.textContent;
+
+      // Função para mudar o texto do label no hover
+      hoverTarget.addEventListener('mouseenter', function() {
+        hoverTarget.textContent = "Modo Noturno", 400;
+      });
+
+      // Função para restaurar o texto do label ao sair do hover
+      hoverTarget.addEventListener('mouseleave', function() {
+        hoverTarget.textContent = labelText;
+      });
+
+
+</script>
+
 </body>
 </html>

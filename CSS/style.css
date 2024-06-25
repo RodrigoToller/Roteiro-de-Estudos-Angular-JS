@@ -1,3 +1,4 @@
+@import url('reset.css');
 @import url('../packs/node_modules/bootstrap-icons/font/bootstrap-icons.css');
 @import url('styles/header.css');
 @import url('styles/footer.css');
@@ -5,66 +6,321 @@
 @import url('styles/page-components/code-area.css');
 @import url('styles/page-components/explicacao-classico.css');
 @import url('styles/page-components/referencias.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('index-custom.css');
 
+
+
+.hider{
+
+
+  display: none;
+
+}
 :root{
 
     --color-vermelho-angular: #b52e31;
     --color-azul-angular: #00ffdd;
 }
 body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background-color: #f4f4f4;
-color: #333;
-  }
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-image 1.2s, background-color 2.2s, color 2.2s;
+  color: #333;
+}
+
+
+.background-pagina{
+  background-image: url('/img/backghround.png');
+}
+.background-pagina-noturno{
+  background-image: url('/img/bg\ noturno.png');
+}
+
+.angular-simbolo-estatico{
+
+
+  position: absolute;
+  right: 40%;
+  bottom: 75%;
+  width: 11%;
+
+}
+.angular-simbolo-estatico-noturno{
+
+
+  position: absolute;
+  right: 40%;
+  bottom: 75%;
+  width: 11%;
+
+}
 main {
 padding: 2em;
-  }
-section {
-
-    display: grid;
-
-    margin-bottom: 1em;
-    padding: 1em;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    justify-items: center
-
-  }
+}
 
 .atividades{
-    margin: 0 25% 0 25%;
+
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+
+    padding: 45px;
+
     margin-bottom: 2em;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 4px;
     text-align: center;
-}
-.atividades a{
-text-decoration: none;
-color: white;
-font-weight: bold;
-padding: 10px;
-border-radius: 10px;
-background-color: var(--color-vermelho-angular);
+
+
+
+    background-color: #e0030686;
+    border: solid 6px #ff00007c;
+    box-shadow: 5px 5px 25px rgb(184, 0, 0);
+    border-radius: 70px;
 
 }
+
+.atividades-noturno{
+
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-items: center;
+
+  padding: 45px;
+
+  margin-bottom: 2em;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+
+
+
+  background-color: #32148686;
+   
+  border: solid 6px #1900ff7c;
+  box-shadow: 5px 5px 25px rgb(28, 0, 184);
+  border-radius: 70px;
+
+
+
+}
+.atividades-noturno a{
+
+  justify-self: center;
+  align-self: center;
+
+  width: 30%;
+  border-radius: 50px;
+
+  font-size: 1.5rem;
+
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: rgb(66, 35, 245);
+
+  transition: 0.7s;
+  box-shadow: 5px 5px 25px black;
+
+}
+
+.atividades-noturno a:hover{
+
+  justify-self: center;
+  align-self: center;
+
+  width: 30%;
+  border-radius: 50px;
+
+  font-size: 1.8rem;
+
+  text-decoration: none;
+  color: rgb(250, 214, 9);
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: rgb(66, 35, 245);
+
+  box-shadow: 1px 1px 25px rgb(255, 231, 11);
+
+
+}
+
+
+.atividades-noturno img{
+
+  width: 40%;
+  border: 20px;
+  margin: 10px;
+}
+.grid-atividade-itens{
+
+    display: grid;
+    gap: 1rem;
+
+
+}
+.atividades a{
+
+  justify-self: center;
+  align-self: center;
+
+  width: 30%;
+  border-radius: 50px;
+
+  font-size: 1.5rem;
+
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: rgb(94, 18, 18);
+
+  transition: 1s;
+}
+.atividades a:hover{
+
+  justify-self: center;
+  align-self: center;
+
+  width: 30%;
+  border-radius: 50px;
+
+  font-size: 1.8rem;
+
+  text-decoration: none;
+  color: rgb(255, 230, 0);
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: rgb(94, 18, 18);
+
+  box-shadow: 1px 1px 25px rgb(255, 231, 11);
+
+}
+
 
 .atividades img{
 
-    width: 25%;
+    width: 40%;
     border: 20px;
     margin: 10px;
+}
+section h2 {
+  margin-top: 0;
+}
+.grid-atividade-itens h3{
 
+  color: white;
+  font-size: 2rem;
+  font-weight: 400;
+
+}
+.grid-atividade-itens h2{
+
+
+  color: white;
+  font-size: 2.3rem;
+  font-weight: bold;
+
+}
+.grid-atividade-itens p{
+
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+
+}
+.button-modo-noturno-ativo{
+
+
+
+  padding: 20px;
+  border-radius: 40px;
+
+  box-shadow: 5px 5px 25px black;
+
+  border: solid 2px rgba(78, 29, 255, 0.377);
+  color: white;
+  background-color: rgba(23, 2, 119, 0.733);
+  font-weight: bold;
+
+  font-size: 1.5rem;
+  gap: 20px;
+  transition: 1.2s;
 
 
 }
+.button-modo-noturno-ativo:hover{
 
-section h2 {
-margin-top: 0;
-  }
+  background-color: rgba(77, 3, 250, 0.733);
+  color: rgb(255, 210, 12);
+  font-size: 1.8rem;
 
 
-  
+}
+.button-modo-noturno{
+
+
+  padding: 20px;
+  border-radius: 40px;
+
+  box-shadow: 5px 5px 25px black;
+  border: solid 2px rgba(255, 29, 29, 0.377);
+
+  margin: 20px;
+  background-color: rgba(119, 2, 2, 0.733);
+
+  color: white;
+  font-weight: bold;
+
+  font-size: 1.5rem;
+  gap: 20px;
+  transition: 1.2s;
+
+}
+.button-modo-noturno:hover{
+
+  background-color: rgba(138, 2, 2, 0.377);
+  color: rgb(252, 214, 4);
+  font-size: 1.8rem;
+}
+.grid-atividade-itens-noturno{
+
+  display: grid;
+  gap: 1rem;
+
+
+}
+.grid-atividade-itens-noturno h3{
+
+  color: white;
+  font-size: 2rem;
+  font-weight: 400;
+
+}
+.grid-atividade-itens-noturno h2{
+
+
+  color: white;
+  font-size: 2.3rem;
+  font-weight: bold;
+
+}
+.grid-atividade-itens-noturno p{
+
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+
+}
+

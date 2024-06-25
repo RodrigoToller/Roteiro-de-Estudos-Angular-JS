@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="myApp">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/angular roboto.png">
+    <title>Plano de Estudo Angular</title>
+   <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body ng-controller="myCtrl" class="background-pagina" ng-class="{'background-pagina': !isDark, 'background-pagina-noturno' : isDark}">
+
+  
+      <main>
+        <label style="width:80px;" class="button-modo-noturno" ng-class="{'button-modo-noturno': !isDark, 'button-modo-noturno-ativo' : isDark}">
+          <input type="checkbox" style="display: none;" ng-model="isDark"  class="button-modo-noturno">
+          <i class="bi" ng-class="{'bi-moon': isDark, 'bi-brightness-high': !isDark}"></i> 
+        </label>
+        <img src="../img/angular foto.png"  class="angular-simbolo-estatico" alt="" ng-class="{'angular-simbolo-estatico' : !isDark, 'hider': isDark}">
+        <img src="../img/angulAR AZUL SOMBRA.png"  class="" alt="" ng-class="{'angular-simbolo-estatico-noturno' : isDark, 'hider': !isDark}">
+
+        <section class="atividades" ng-class="{'atividades' : !isDark, 'atividades-noturno' : isDark}" style="margin-top: 100px;">
+          
+          <img src="../img/angular roboto.png" alt="" class="robo-angular" ng-class="{'robo-angular' : !isDark, 'hider' : isDark}">
+          <img src="../img/azulrobo.png" alt=""  ng-class="{'robo-angular-noturno' : isDark, 'hider': !isDark}">
+          <div class="grid-atividade-itens" ng-class="{'grid-atividade-itens-noturno' : isDark , 'grid-atividade-itens': !isDark }">
+            <h3> Atividade 1</h3>
+            <h2>Introdução ao Angular</h2>
+            <p>Você já conhece o AngularJS? Aqui temos uma introdução bem didática para você! <br/> <br/>
+            Nesta página você vai encontrar um exemplo básico de um módulo controlador AngularJS <br/> Vamos explorar juntos como criar aplicações web dinâmicas e poderosas usando esta incrivel biblioteca! <br/> <br/>Preparado para começar?</p>
+            <a href="../Atividade 1/atividade1.html"> Vamos </a>
+          </div>
+       
+        </section>
+
+        <section class="atividades" ng-class="{'atividades' : !isDark, 'atividades-noturno' : isDark}">
+          <img src="../img/angular roboto.png" alt="" class="robo-angular" ng-class="{'robo-angular' : !isDark, 'hider' : isDark}">
+          <img src="../img/azulrobo.png" alt=""  ng-class="{'robo-angular-noturno' : isDark, 'hider': !isDark}">
+
+          <div class="grid-atividade-itens">
+            <h3> Atividade 2</h3>
+            <h2>Diretivas Essenciais</h2>
+            <p>Nesta página, você vai aprender como usar diretivas e controladores para construir uma <br/>
+            aplicação de gestão de tarefas eficiente e organizada. Vamos explorar juntos como essas ferramentas <br/> Vamos explorar juntos como essas ferramentas poderosas do AngularJS podem simplificar o desenvolvimento e melhorar a funcionalidade do seu projeto. <br/> <br/>Pronto para criar algo incrivel?</p>
+            <a href="../Atividade 2/atividade2.html"> Vamos </a>
+          </div>
+        </section>
+        
+        <section class="atividades" ng-class="{'atividades' : !isDark, 'atividades-noturno' : isDark}">
+          <img src="../img/angular roboto.png" alt="" class="robo-angular" ng-class="{'robo-angular' : !isDark, 'hider' : isDark}">
+          <img src="../img/azulrobo.png" alt=""  ng-class="{'robo-angular-noturno' : isDark, 'hider': !isDark}">
+
+          <div class="grid-atividade-itens">
+            <h3> Atividade 3</h3>
+            <h2>Diretivas Avançadas</h2>
+            <p>Nesta página, você vai descobrir como criar formularios interativos e dinamicos utilizando
+            <br/>
+            dropdowns que se atualizam automaticamente e elementos que aparecem ou desaparecem com<br/> 
+            base nas suas condições. Juntos, vamos explorar as poderosas capacidades do AngularJS para tornar seus 
+            <br/> 
+            formulários mais eficientes e intuitivos.
+            <br/>
+            <br/>
+            Preparado para começar?</p>
+            <a href="../Atividade 3/atividade3.html"> Vamos </a>
+          </div>
+        </section>
+        
+        <section class="atividades" ng-class="{'atividades' : !isDark, 'atividades-noturno' : isDark}">
+          <img src="../img/angular roboto.png" alt="" class="robo-angular" ng-class="{'robo-angular' : !isDark, 'hider' : isDark}">
+          <img src="../img/azulrobo.png" alt=""  ng-class="{'robo-angular-noturno' : isDark, 'hider': !isDark}">
+
+          <div class="grid-atividade-itens">
+            <h3> Atividade 4</h3>
+            <h2>CSS + AngularJS</h2>
+            <p> Quer deixar seu CSS ainda mais incrível? Vamos falar sobre como turbinar seu CSS com AngularJS.<br/>
+            Nesta página, você vai aprender técnicas para combinar o poder do AngularJS com seu CSS,<br/>
+            criando estilos dinâmicos e responsivos que vão deixar suas aplicações web ainda mais<br>
+            impressionantes. Juntos, vamos descobrir como usar diretivas, bindings e outras funcionalidades<br>
+            do AngularJS para transformar e animar seus estilos com facilidade <br><br>
+            Preparado para começar?
+            </p>
+            <a href="../Atividade 4/atividade4.html"> Vamos </a>
+          </div>
+        </section>
+        
+        <section class="atividades" ng-class="{'atividades' : !isDark, 'atividades-noturno' : isDark}">
+          <img src="../img/angular roboto.png" alt="" class="robo-angular" ng-class="{'robo-angular' : !isDark, 'hider' : isDark}">
+          <img src="../img/azulrobo.png" alt=""  ng-class="{'robo-angular-noturno' : isDark, 'hider': !isDark}">
+
+          <div class="grid-atividade-itens">
+            <h3> Atividade 5</h3>
+            <h2>Watchers</h2>
+            <p> 
+              Nesta página, você vai aprender como usar watchers para monitorar e reagir a mudanças de<br>
+              dados em suas aplicações AngularJS. Vamos explorar juntos como esses poderesos recursos<br>
+              podemajudar a manter seu aplicativo atualizado e responsivo, observando e respondendo <br>
+              automaticamente a qualquer alteração nos dados.<br><br>
+              pronto para levar suas habilidades ao próximo nível?
+            </p>
+            <a href="../Atividade 5/atividade5.html"> Vamos </a>
+          </div>
+
+        </section>
+      </main>
+
+      <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+          $scope.isDark = false;
+
+          $scope.changeTheme = function() {
+            $scope.isDark = !$scope.isDark;
+          }
+
+        });
+      </script>
+</body>
+</html>

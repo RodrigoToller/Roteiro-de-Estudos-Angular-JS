@@ -2,11 +2,12 @@
 
     margin: 2rem;
 
-    background-color: var(--color-vermelho-angular);
+    background-color: rgba(243, 117, 0, 0.829);
     padding: 2rem;
     color: white;
     border-radius: 40px;
-    box-shadow: 0 0 10px black;
+    border: solid 2px rgb(248, 124, 23);
+    box-shadow: 5px 5px 25px rgb(238, 149, 16);
 }
 
 .campo-laranja  ul{

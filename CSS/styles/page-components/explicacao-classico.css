@@ -1,6 +1,10 @@
 .explicacao-classica{
 
-    border: solid 2px black;
+    background-color: rgba(168, 1, 1, 0.829);
+    color: white;
+
+
+    border: solid 2px rgb(255, 0, 0);
     padding: 1.8rem;
     margin: 2rem
 

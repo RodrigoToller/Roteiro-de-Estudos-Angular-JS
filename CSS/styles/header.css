@@ -4,11 +4,17 @@
   color: white;
 }
 header {
-    background-color: var(--color-vermelho-angular);
     color: white;
-    padding: 1em 0;
     text-align: center;
+    background: #5c0000e5;
+
 }
 header h1 {
-margin: 0;
+
+  padding: 20px;
+
+  font-size: 2rem;
+
+
+  font-weight: 600;
 }

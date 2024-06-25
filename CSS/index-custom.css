@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('/packs/node_modules/bootstrap-icons/font/bootstrap-icons.css');
+
+.hider{
+
+
+    display: none;
+
+
+
+}
+.background-geral{
+
+    background-image: url('../img/bg\ entrada.png');
+
+
+}
+.background-geral-noturno{
+
+    background-image: url('../img/bg\ entrada\ noturno.png');
+
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    transition: background-image 2.2s, background-color 2.2s, color 2.2s;
+
+}
+.quadrado-principal {
+   
+
+
+    display: grid;
+    grid-template-columns: 10% 1fr 10%;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    align-items: center;
+    justify-items: center;
+
+    text-align: center;
+
+}   
+.quadrado-vermelho{
+
+
+    padding: 0 100px 100px 100px;
+    border-radius: 40px;
+    background-color: rgba(180, 21, 21, 0.432);
+
+
+    gap: 20px;
+
+    box-shadow: 5px 5px 25px black;
+
+    display: grid;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+
+}
+.quadrado-noturno{
+
+    background-color: rgba(20, 12, 54, 0.733);
+    padding: 30px 100px 100px 100px;
+
+
+}
+.quadrado-vermelho h1{
+
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 5px 5px 25px black;
+
+}
+.quadrado-vermelho h2{
+
+    color: white;
+    font-size: 2.0rem;
+    font-weight: 500;
+    text-shadow: 5px 5px 25px black;
+
+}
+.quadrado-principal img {
+
+    width: 250px;
+    
+}
+.button-acessar{
+
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: var(--color-vermelho-angular);
+
+    width: 30%;
+    
+    box-shadow: 5px 5px 25px black;
+    border: solid 2px rgba(255, 29, 29, 0.377);
+
+    padding: 20px 20px 20px 20px;
+    border-radius: 40px;
+    background-color: rgba(119, 2, 2, 0.733);
+
+    transition: 1.2s;
+
+}
+.button-acessar:hover{
+
+
+    background-color: rgba(255, 29, 29, 0.377);
+    color: rgb(251, 255, 0);
+    font-size: 1.8rem;
+
+}
+.button-acessar-noturno{
+    border: solid 2px rgba(77, 3, 250, 0.733);
+    background-color: rgba(14, 2, 119, 0.733);
+}
+.button-acessar-noturno:hover{
+
+    background-color: rgba(77, 3, 250, 0.733);
+    color: rgb(255, 210, 12);
+    font-size: 1.8rem;
+
+}
+.button-modo-noturno-ativo{
+
+    display: flex;
+
+    padding: 20px;
+    border-radius: 40px;
+
+    box-shadow: 5px 5px 25px black;
+
+    border: solid 2px rgba(78, 29, 255, 0.377);
+    color: white;
+    background-color: rgba(23, 2, 119, 0.733);
+    font-weight: bold;
+
+    font-size: 1.5rem;
+    gap: 20px;
+    transition: 1.2s;
+
+}
+.button-modo-noturno-ativo:hover{
+
+    background-color: rgba(77, 3, 250, 0.733);
+    color: rgb(255, 210, 12);
+    font-size: 1.8rem;
+
+}
+.button-modo-noturno{
+
+
+    display: flex;
+
+    padding: 20px;
+    border-radius: 40px;
+
+    box-shadow: 5px 5px 25px black;
+    border: solid 2px rgba(255, 29, 29, 0.377);
+
+    margin: 20px;
+    background-color: rgba(119, 2, 2, 0.733);
+
+    color: white;
+    font-weight: bold;
+
+    font-size: 1.5rem;
+    gap: 20px;
+    transition: 1.2s;
+
+}
+.button-modo-noturno:hover{
+
+    background-color: rgba(138, 2, 2, 0.377);
+    color: rgb(252, 214, 4);
+    font-size: 1.8rem;
+}
+
+
+
+

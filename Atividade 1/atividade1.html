@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="meuApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,22 +9,23 @@
     <link rel="icon" href="../img/icon-title/roboto-icon-title.png">
     <title>Introdução ao Angular</title>
 </head>
-<body>
-    <header>
-        <a class="link-voltar" href="../index.html"><h1><i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>Plano de Estudo Angular<i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i></h1></a>
-    </header>
 
+
+<header>
+    <h1> <i style="margin: 10px; text-shadow: 1px 1px 20px rgb(0, 0, 0);" class="bi bi-dice-1-fill"></i>  Atividade 1 - Introdução ao AngularJS</h1>
+</header>
+
+<body ng-controller="meuController"  class="background-geral" ng-class="{'background-geral-noturno': isDark, '': !isDark}">
         
-        <h1 class="titulo-atividade"> ATIVIDADE 1 - Introdução ao Angular</h1>
-        <div class="div-grid-robo">
+    <div class="div-grid-robo">
             <div></div>
             <div class="campo-robo">
-                <img src="img/angular roboto.png" alt="foto do robo do angularJS">
-                <h2> Olá eu sou o robo Angular JS</h2>
+                <img src="../img/angular roboto.png" alt="foto do robo do angularJS">
+                <h2>{{mensagem}}</h2>
                 <a href="../index.html"> Voltar </a>
             </div>
             <div></div>
-        </div>
+    </div>
         
 
         <div class="explicacao-classica">
