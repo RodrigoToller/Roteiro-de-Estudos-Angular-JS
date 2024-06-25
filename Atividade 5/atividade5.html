@@ -10,9 +10,7 @@
     <link rel="icon" href="../img/angular roboto.png">
     <title>Atividade 5 - Watchers</title>
     <style>
-        .error {
-            color: red;
-        }
+       
         .success {
             color: green;
         }
@@ -26,42 +24,48 @@
         <form name="cadastroForm" ng-submit="submitForm()" class="formulario-area">
             <div></div>
             <div class="triagem">
-                <label>Nome Completo:</label>
-                <input type="text" ng-model="usuario.nomeCompleto" placeholder="Digite seu nome completo" required>
-                <span class="error" ng-show="cadastroForm.nomeCompleto.$touched && !usuario.validoNomeCompleto">Nome completo é obrigatório.</span>
+                <label> <i class="bi bi-person-fill" style="margin-right: 10px;" ></i>Nome Completo:</label>
+                <input type="text" name="nomeCompleto" ng-model="usuario.nomeCompleto" placeholder="Digite seu nome completo" required ng-pattern="/^[a-zA-Z\s]+$/">
+                <span class="error" ng-show="cadastroForm.nomeCompleto.$touched && cadastroForm.nomeCompleto.$error.required">Nome completo é obrigatório.</span>
+                <span class="error" ng-show="cadastroForm.nomeCompleto.$touched && cadastroForm.nomeCompleto.$error.pattern">Nome completo inválido. Use apenas letras e espaços.</span>
 
-                <label>CPF:</label>
-                <input type="text" ng-model="usuario.cpf" ng-change="formatarCPF()" placeholder="Digite seu CPF" required>
+                <label> <i class="bi bi-person-vcard" style="margin-right: 10px;"></i> CPF:</label>
+                <input type="text" name="cpf" ng-model="usuario.cpf" ng-change="formatarCPF()" placeholder="Digite seu CPF" required ng-pattern="/^\d{3}\.\d{3}\.\d{3}-\d{2}$/">
+                <span class="error" ng-show="cadastroForm.cpf.$touched && cadastroForm.cpf.$error.required">CPF é obrigatório.</span>
+                <span class="error" ng-show="cadastroForm.cpf.$touched && cadastroForm.cpf.$error.pattern">CPF inválido. Use o formato xxx.xxx.xxx-xx.</span>
                 <span class="error" ng-show="cadastroForm.cpf.$touched && !usuario.validoCPF">CPF inválido.</span>
 
-                <label>RG:</label>
-                <input type="text" ng-model="usuario.rg" ng-change="" placeholder="Digite seu RG" required>
-                <span class="error" ng-show="cadastroForm.rg.$touched && !usuario.validoRG">RG é obrigatório.</span>
+                <label> <i class="bi bi-person-vcard-fill" style="margin-right: 10px;"></i> RG:</label>
+                <input type="text" name="rg" ng-model="usuario.rg" placeholder="Digite seu RG" required ng-pattern="/^\d+$/">
+                <span class="error" ng-show="cadastroForm.rg.$touched && cadastroForm.rg.$error.required">RG é obrigatório.</span>
+                <span class="error" ng-show="cadastroForm.rg.$touched && cadastroForm.rg.$error.pattern">RG inválido. Use apenas números.</span>
 
-                <label>Data de Nascimento:</label>
-                <input type="date" ng-model="usuario.dataNascimento" required>
-                <span class="error" ng-show="cadastroForm.dataNascimento.$touched && !usuario.validoDataNascimento">Data de nascimento é obrigatória.</span>
-                <label>Sexo:</label>
-                <select ng-model="usuario.sexo" required>
+                <label> <i class="bi bi-calendar3" style="margin-right: 10px;"></i> Data de Nascimento:</label>
+                <input type="date" name="dataNascimento" ng-model="usuario.dataNascimento" required>
+                <span class="error" ng-show="cadastroForm.dataNascimento.$touched && cadastroForm.dataNascimento.$error.required">Data de nascimento é obrigatória.</span>
+                
+                <label><i class="bi bi-gender-ambiguous" style="margin-right: 10px;"></i> Sexo:</label>
+                <select name="sexo" ng-model="usuario.sexo" required>
                     <option value="">Selecione</option>
                     <option value="Masculino">Masculino</option>
                     <option value="Feminino">Feminino</option>
                     <option value="Outro">Outro</option>
                 </select>
-                <span class="error" ng-show="cadastroForm.sexo.$touched && !usuario.validoSexo">Sexo é obrigatório.</span>
+                <span class="error" ng-show="cadastroForm.sexo.$touched && cadastroForm.sexo.$error.required">Sexo é obrigatório.</span>
 
-                <label>Endereço:</label>
-                <input type="text" ng-model="usuario.endereco" placeholder="Digite seu endereço" required>
-                <span class="error" ng-show="cadastroForm.endereco.$touched && !usuario.validoEndereco">Endereço é obrigatório.</span>
+                <label> <i class="bi bi-house-door-fill" style="margin-right: 10px;"></i>Endereço:</label>
+                <input type="text" name="endereco" ng-model="usuario.endereco" placeholder="Digite seu endereço" required ng-pattern="/^[a-zA-Z0-9\s]+$/">
+                <span class="error" ng-show="cadastroForm.endereco.$touched && cadastroForm.endereco.$error.required">Endereço é obrigatório.</span>
+                <span class="error" ng-show="cadastroForm.endereco.$touched && cadastroForm.endereco.$error.pattern">Endereço inválido. Use apenas letras, números e espaços.</span>
+                
                 <button type="submit">Cadastrar Informações</button>
-
             </div>
         </form>
     </div>
     <div ng-show="formEnviado" class="mensagem-do-forms">
         <div class="pop-up">
             <p class="success" ng-show="formValido">Formulário enviado com sucesso!</p>
-            <p class="error" ng-show="!formValido">Formulario invalido! por favor preencha novamente com as informações corretas!</p>
+            <p class="error" ng-show="!formValido">Formulário inválido! Por favor preencha novamente com as informações corretas!</p>
             <button ng-click="resetForm()">OK</button>
         </div>
     </div>
@@ -89,6 +93,7 @@
             };
             $scope.formEnviado = false;
             $scope.formValido = false;
+
             function validarCPF(cpf) {
                 // Verifica a formatação usando regex
                 var regex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
@@ -132,6 +137,7 @@
                 $scope.usuario.validoSexo = !!$scope.usuario.sexo;
                 $scope.usuario.validoEndereco = !!$scope.usuario.endereco;
             }
+
             $scope.submitForm = function() {
                 validarCampos();
                 $scope.formEnviado = true;
@@ -142,6 +148,7 @@
                                     $scope.usuario.validoSexo &&
                                     $scope.usuario.validoEndereco;
             };
+
             $scope.resetForm = function() {
                 $scope.formEnviado = false;
                 $scope.formValido = false;
@@ -175,7 +182,6 @@
                 }
                 $scope.usuario.cpf = cpf;
             };
-            
         });
     </script>
 </body>
