@@ -4,82 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="at4.css">
-    <link rel="icon" href="../Atividade 1/img/angular roboto.png">
+    <link rel="icon" href="../img/angular roboto.png">
     <title>CSS + ANGULAR JS - Atividade 4 - AngularJS</title>
 </head>
-<body ng-controller="meuController" ng-class="{'body-noturno': isNoturno}">
-
-    <header ng-class="{'background-noturno': isNoturno}">
-        <a class="link-voltar" href="../index.html">
-            <h1><i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>Plano de Estudo Angular<i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>  
-          </h1></a>
-          <label class="checkbox-container botao-noturno-classe">
-            <input type="checkbox" ng-model="isNoturno" style="display: none;">
-            <i class="bi" ng-class="{'bi-moon': isNoturno, 'bi-brightness-high': !isNoturno}"></i> Modo Noturno
+<body ng-controller="meuController" ng-class="{'body-noturno': isNoturno}" class="body-vermelho">
+    <header ng-class="{'header-noturno': isNoturno, '' : !isNoturno}">
+        <h1> <a href="../secao-atividades/secao-atividade.html"><i class="bi bi-dice-4-fill"></i> Atividade 4 - CSS + ANGULAR JS  </a></h1>
+        <label class="button-modo-noturno" ng-class="{'button-modo-noturno': !isNoturno, 'button-modo-noturno-ativo' : isNoturno}">
+            <input type="checkbox" style="display: none;" ng-model="isNoturno"  class="button-modo-noturno">
+            <i class="bi" ng-class="{'bi-moon': isDark, 'bi-brightness-high': !isDark}"></i> 
         </label>
     </header>
     <main>
-        <h1 class="titulo-atividade">CSS + ANGULAR JS - Atividade 4 </h1>
         <section class="exemplos-basicos" ng-class="{'section-noturno': isNoturno}">
-            <div class="alteracao-basica-condicional">
-                <div class="alt-bsc-1">
-                    <h2>Alteração Condicional de Classes</h2>
-                    <label>
-                        <input type="checkbox" ng-model="isVermelho"> Vermelho
-                    </label>
-                    <p ng-class="{'vermelho': isVermelho, 'verde': !isVermelho}">
-                        Este texto muda de cor.
-                    </p>
+            
+            <div>
+                <div class="alteracao-basica-condicional">
+                    <div class="alt-bsc-1" ng-class="{'alt-bsc-1': !isNoturno, 'alt-bsc-1-noturno' : isNoturno }" >
+                        <h2>Alteração Condicional de Classes</h2>
+                        <label>
+                            <input type="checkbox" ng-model="isVermelho"> Vermelho
+                        </label>
+                        <p ng-class="{'vermelho': isVermelho, 'verde': !isVermelho}">
+                            Este texto muda de cor.
+                        </p>
+                    </div>
+                    <div class="alt-bsc-2" ng-class="{'alt-bsc-2': !isNoturno, 'alt-bsc-2-noturno' : isNoturno}">
+                        <h2>Estilização Adicional</h2>
+                        <label>
+                            <input type="checkbox" ng-model="isNegrito"> Negrito
+                        </label>
+                        <label>
+                            <input type="checkbox" ng-model="isItalico"> Itálico
+                        </label>
+                        <p ng-class="{'negrito': isNegrito, 'italico': isItalico}">
+                            Este texto pode ser estilizado como negrito e/ou itálico.
+                        </p>
+                    </div>
                 </div>
-                <div class="alt-bsc-2">
-                    <h2>Estilização Adicional</h2>
-                    <label>
-                        <input type="checkbox" ng-model="isNegrito"> Negrito
-                    </label>
-                    <label>
-                        <input type="checkbox" ng-model="isItalico"> Itálico
-                    </label>
-                    <p ng-class="{'negrito': isNegrito, 'italico': isItalico}">
-                        Este texto pode ser estilizado como negrito e/ou itálico.
-                    </p>
+    
+                <div class="lista-tarefas-custom" ng-class="{'lista-tarefas-custom': !isNoturno, 'lista-tarefas-custom-noturno' : isNoturno }">
+                    <h2>Lista de Tarefas</h2>
+                    <input type="text" ng-model="novaTarefa" placeholder="Adicione uma nova tarefa">
+                    <button ng-click="adicionarTarefa()">Adicionar</button>
+                    <ul >
+                        <li class="custom-list-item-tarefas" ng-repeat="tarefa in tarefas" ng-class="{'tarefa-completa': tarefa.completa}" style="gap: 20px;">
+                            <input type="checkbox" ng-model="tarefa.completa"> <strong>Tarefa: </strong> {{tarefa.texto}}
+                            
+                            <button ng-click="removerTarefa($index)"><i class="bi bi-trash3-fill"></i></button>
+                        </li>
+                    </ul>
                 </div>
             </div>
+            
 
-            <div class="lista-tarefas-custom">
-                <h2>Lista de Tarefas</h2>
-                <input type="text" ng-model="novaTarefa" placeholder="Adicione uma nova tarefa">
-                <button ng-click="adicionarTarefa()">Adicionar</button>
-                <ul >
-                    <li class="custom-list-item-tarefas" ng-repeat="tarefa in tarefas" ng-class="{'tarefa-completa': tarefa.completa}" style="gap: 20px;">
-                        <input type="checkbox" ng-model="tarefa.completa"> <strong>Tarefa: </strong> {{tarefa.texto}}
-                        
-                        <button ng-click="removerTarefa($index)"><i class="bi bi-trash3-fill"></i></button>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="formulario-contato">
-                <h2>Formulário de Contato</h2>
-                <div ng-class="{'ocultar-form': formularioEnviado}">
-                    <form class="formulario-contato-itens" ng-submit="enviarFormulario()" name="formContato" novalidate ng-class="{'formulario-valido': formContato.$valid, 'formulario-invalido': formContato.$invalid}">
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" ng-model="formulario.nome" required>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" ng-model="formulario.email" required>
-                        <label for="mensagem">Mensagem:</label>
-                        <textarea id="mensagem" ng-model="formulario.mensagem" required></textarea>
-                        
-                        <button type="submit" ng-disabled="formContato.$invalid">Enviar</button>
-                    </form>
+            <div class="formulario-contato" ng-class="{'formulario-contato': !isNoturno, 'formulario-contato-noturno' : isNoturno }" >
+                <div>                
+                    <h2>Formulário de Contato</h2>
+                    <div ng-class="{'ocultar-form': formularioEnviado}">
+                        <form class="formulario-contato-itens" ng-submit="enviarFormulario()" name="formContato" novalidate ng-class="{'formulario-valido': formContato.$valid, 'formulario-invalido': formContato.$invalid}">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" ng-model="formulario.nome" required>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" ng-model="formulario.email" required>
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea id="mensagem" ng-model="formulario.mensagem" required></textarea>
+                            
+                            <button type="submit" ng-disabled="formContato.$invalid">Enviar</button>
+                        </form>
+                    </div>
+                    <p class="mensagem-forms-sucesso" ng-if="formularioEnviado">Formulário enviado com sucesso!</p>
                 </div>
-                <p class="mensagem-forms-sucesso" ng-if="formularioEnviado">Formulário enviado com sucesso!</p>
             </div>
         </section>
-        
-        <section class="exemplos-basicos" ng-class="{'section-noturno': isNoturno}">
+        <section class="grid-explicacoes-geral" ng-class="{'section-noturno': isNoturno}">
             <div class="explicacao-classica" ng-class="{'explicacao-classica-noturno' : isNoturno}">
             <h1>Alteração Basica Condicional</h1>    
             <ul>
@@ -99,8 +99,7 @@
                 
 
             </div>
-
-            <div class="campo-laranja" ng-class="{'background-noturno': isNoturno}">
+            <div class="campo-laranja" ng-class="{'campo-laranja-noturno': isNoturno, 'campo-laranja': !isNoturno}">
                 <h1>Lista de Tarefas</h1>    
                 <ul>
                     <li> <strong>Função do ng-class</strong> </li>
@@ -134,20 +133,17 @@
                 </ul>
             </div>
         </section>
-
-        <section class="dicas-para-usuario">
-            <div class="campo-laranja" ng-class="{'background-noturno': isNoturno}" >
-                <h2> ATENÇÃO - VOCÊ PERCEBEU??</h2>
+        <section class="dicas-para-usuario" >
+            <div class="campo-laranja" style="padding: 50px;" ng-class="{'campo-laranja-noturno': isNoturno}" >
+                <h2 style="margin-bottom: 20px; color: rgb(0, 89, 255);" > ATENÇÃO - VOCÊ PERCEBEU??</h2>
                 <p> Nessa pagina, além de todo conteudo explicado até o momento, fizemos um componente que muda totalmente a estilização de nossa pagina, você encontrou? </p>
             </div>
-            <div class="dica-botao">
+            <div class="dica-botao" ng-class="{'dica-botao' : !isNoturno, 'dica-botao-noturno' : isNoturno}">
                 <h2><i class="bi bi-lightbulb-fill"></i> DICA - ONDE ENCONTRAR O BOTÃO!</h2>
-                <p> Consegue identificar o sol com o texto "modo noturno"? lá é nosso objetivo, va até o header da pagina, e clique para ver o que acontece!</p>
-                <img src="../img/at4/dica-item-noturno.png" alt="dica item noturno">
+                <p> Consegue identificar o botão do sol em nosso cabeçalho?? Pois é, lá é nosso objetivo, va até o cabeçalho da pagina, e clique para ver o que acontece!</p>
+                <img src="../img/foto-botao-noturno.png" alt="dica item noturno">
             </div>
         </section>
-       
-
         <div class="referencias" ng-class="{'referencia-noturno': isNoturno}">
             <h2>Recursos Adicionais</h2>
             <ul>

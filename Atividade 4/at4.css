@@ -1,21 +1,9 @@
-
+.body-vermelho{
+    background-image: url('../img/background.png');
+}
 .body-noturno{
-    background-color: rgb(77, 72, 72);
+    background-image: url('../img/bg-noturno.png');
 }
-.titulo-atividade{
-
-    background-color: rgb(0, 161, 161);
-    padding: 20px;
-    text-align: center;
-    border-radius: 20px;
-    color: white;
-
-}
-.section-noturno{
-    background-color: rgb(203, 199, 219);
-    border: 1px solid black;
-}
-
 .botao-noturno-classe:hover{
 
     color: yellow;
@@ -25,7 +13,6 @@
 .background-noturno{
     background-color: rgb(33, 29, 253);
 }
-
 .referencia-noturno{
     background-color: black;
 }
@@ -34,72 +21,158 @@
 .tarefa-completa { text-decoration: line-through; }
 .formulario-contato { margin-top: 20px; }
 .vermelho{font-weight: bold; color: red; }
-.verde{ color: green; }
+.verde{ color: rgb(4, 255, 4); }
 .ocultar-form{
     display: none;
-}
-.explicacao-classica-noturno{
-    background-color: rgb(238, 238, 238);
 }
 .exemplos-basicos{
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    
-    padding: 40px 20px 40px 20px;
+    grid-template-columns: 1fr 1fr;
+    padding: 25px;
         
 
 
 }
 .formulario-valido{
-color: green;
+color: rgb(0, 255, 0);
 }
 .formulario-invalido{
 color: red;
-
 }
 .alteracao-basica-condicional{
 
     padding: 30px;
     border-radius: 20px;
+    
+
 
 }
 .alt-bsc-1{
-    background-color: white;
 
-    border: solid 1px black;
-    padding: 15px;
+    display: grid;
+    
+    gap: 30px;
+
+    color: white;
+
+    border-radius: 40px;
+    background-color: rgba(180, 21, 21, 0.432);
+    box-shadow: 5px 5px 25px black;
+
+    
+    padding: 35px;
     border-radius: 10px;
     margin: 10px;
 
 
 }
-.alt-bsc-1:hover{
+.alt-bsc-1 h2{
 
-box-shadow: 2px 2px 2px 2px rgb(185, 185, 185);
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 5px 5px 25px black;
+
+
+
+}
+.alt-bsc-1-noturno{
+
+
+    display: grid;
+    
+    gap: 30px;
+
+    color: white;
+
+    border-radius: 40px;
+    border: solid 2px rgba(78, 29, 255, 0.377);
+
+    background-color: rgba(31, 6, 146, 0.733);
+    box-shadow: 5px 5px 25px rgb(21, 18, 184);
+
+    
+    padding: 35px;
+    border-radius: 10px;
+    margin: 10px;
+}
+.alt-bsc-1-noturno h2{
+
+  
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 5px 5px 25px black;
+
 }
 .alt-bsc-2{
-    background-color: white;
+    display: grid;
+    
+    gap: 30px;
 
-    border: solid 1px black;
-    padding: 15px;
+    color: white;
+
+    border-radius: 40px;
+    background-color: rgba(180, 21, 21, 0.432);
+    box-shadow: 5px 5px 25px black;
+
+    
+    padding: 35px;
     border-radius: 10px;
     margin: 10px;
 
 
 }
-.alt-bsc-2:hover{
+.alt-bsc-2 h2{
 
-    box-shadow: 2px 2px 2px 2px rgb(185, 185, 185);
-    }
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 5px 5px 25px black;
+}
+.alt-bsc-2-noturno{
+
+
+    display: grid;
+    
+    gap: 30px;
+
+    color: white;
+
+    border-radius: 40px;
+    border: solid 2px rgba(78, 29, 255, 0.377);
+
+    background-color: rgba(31, 6, 146, 0.733);
+    box-shadow: 5px 5px 25px rgb(21, 18, 184);
+
+    
+    padding: 35px;
+    border-radius: 10px;
+    margin: 10px;
+}
+.alt-bsc-2-noturno h2{
+
+  
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 5px 5px 25px black;
+
+}
 .lista-tarefas-custom{
-    background-color: white;
+    background-color: rgba(180, 21, 21, 0.432);
+    color: white;
+    font-weight: bold;
+    text-shadow: 5px 5px 25px black;
 
-border: double 5px rgb(32, 32, 32);
-padding: 40px 25px 40px 25px;
-text-align: center;
-display: grid;
-gap: 10px;
+
+    border: double 5px rgba(255, 0, 0, 0.438);
+    padding: 20px;
+    text-align: center;
+    display: grid;
+    gap: 10px;
+
+    box-shadow: 5px 5px 25px black;
+
+    margin: 40px;
 
 }
 .lista-tarefas-custom ul{
@@ -109,6 +182,7 @@ gap: 10px;
 .lista-tarefas-custom input{
 
     padding: 10px;
+    
     font-size: 1.2rem;
     font-weight: 600;
 
@@ -117,18 +191,21 @@ gap: 10px;
     padding: 10px;
     font-size: 1.2rem;
     font-weight: 600;
-    border: none;
-    background-color: rgb(185, 185, 185);
-    cursor: pointer;
+    border: solid 2px rgba(255, 29, 29, 0.377);
+    border-radius: 40px;
+
+    background-color: rgba(119, 2, 2, 0.733);
+    cursor: pointer;    
+    box-shadow: 5px 5px 30px black;
+
+
+    transition: 1.2s;
+
 }
 .lista-tarefas-custom button:hover{
-    padding: 10px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    border: none;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    cursor: pointer;
+    background-color: rgba(255, 29, 29, 0.377);
+    color: rgb(251, 255, 0);
+    font-size: 1.8rem;
 }
 .custom-list-item-tarefas{
 display: flex;
@@ -153,41 +230,139 @@ justify-content: center;
     border-radius: 5px;
     cursor: pointer;
 }
+.lista-tarefas-custom-noturno{
 
+    padding: 20px;
+    text-align: center;
+    display: grid;
+    gap: 10px;
+
+    border: double 5px rgba(78, 29, 255, 0.377);
+    box-shadow: 5px 5px 25px rgb(39, 5, 163);
+
+    margin: 40px;
+
+    background-color: rgba(31, 6, 146, 0.733);
+    color: white;
+    font-weight: bold;
+    text-shadow: 5px 5px 25px black;
+
+}
+.lista-tarefas-custom-noturno input{
+
+    padding: 10px;
+    
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    background-color: transparent;
+    border: solid 2px rgba(112, 73, 255, 0.377);
+    box-shadow: 5px 5px 25px rgb(39, 5, 163);
+
+    color: white;
+
+}
+.lista-tarefas-custom-noturno button{
+   
+    color: white;
+   
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: solid 2px rgba(1, 67, 250, 0.692);
+    border-radius: 40px;
+
+    background-color: rgba(31, 6, 146, 0.733);
+    cursor: pointer;    
+    box-shadow: 5px 5px 30px black;
+
+
+    transition: 1.2s;
+
+}
+.lista-tarefas-custom-noturno button:hover{
+    background-color: rgba(44, 29, 255, 0.377);
+    color: rgb(251, 255, 0);
+    font-size: 1.8rem;
+
+}
+.grid-explicacoes-geral{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+
+}
 .formulario-contato{
 
     text-align: center;
-    background-color: white;
+    background-color: transparent;
+ 
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px;
+}
+.formulario-contato-noturno{
+    text-align: center;
+    background-color: transparent;
 
     display: grid;
     gap: 10px;
     padding: 20px;
-    border: solid 1px black;
+    border-radius: 10px;
+    margin: 30px;
+}
+.formulario-contato-noturno h2{
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-shadow: 5px 5px 25px rgb(66, 49, 221);
+}
+.formulario-contato h2{
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-shadow: 5px 5px 25px black;
+}
+.formulario-contato-noturno .formulario-contato-itens{
+
+    display: grid;
+
+    background-color: rgba(32, 21, 180, 0.432);
+
+    gap: 10px;
+    padding: 20px;
+    border: soloid 1px black;
     border-radius: 10px;
     margin: 20px;
-
 }
-
 .formulario-contato-itens{
 
 
     display: grid;
-    background-color: bisque;
+
+    background-color: rgba(180, 21, 21, 0.432);
+    
+    
+
     gap: 10px;
     padding: 20px;
-    border: dashed 1px black;
+    border: solid 1px rgb(255, 0, 0);
+    box-shadow: 2px 2px 2px 12px rgba(170, 2, 2, 0.548);
     border-radius: 10px;
     margin: 20px;
 
 }
-
 .formulario-contato-itens label{
 
     font-weight: bold;
     font-size: 1.2rem;
 
 }
-
 .formulario-contato-itens input{
 
     padding: 10px;
@@ -195,7 +370,6 @@ justify-content: center;
     font-weight: 600;
 
 }
-
 .formulario-contato-itens textarea{
 
     padding: 10px;
@@ -203,7 +377,6 @@ justify-content: center;
     font-weight: 600;
 
 }
-
 .formulario-contato-itens button{
 
     padding: 10px;
@@ -222,26 +395,29 @@ justify-content: center;
 
 
 }
-
 .dica-botao{
 
     margin: 20px;
     display: grid;
     align-items: center;
     justify-items: center;
-    padding: 20px;
-    box-shadow: 2px 2px 2px 2px rgb(185, 185, 185);
+    gap: 30px;
 
+    background-color: rgba(180, 21, 21, 0.432);
 
+    border: solid 2px rgb(255, 0, 21);
+
+    padding: 40px;
+    box-shadow: 2px 2px 2px 2px rgb(10, 1, 1);
+
+    border-radius: 45px;
+
+    color: white;
+    font-weight: bold;
 }
-
 .dica-botao h2{
-
     color: rgb(0, 60, 255);
-    
-
 }
-
 .dica-botao img{
 
 
@@ -253,6 +429,26 @@ justify-content: center;
 
     padding: 40px 20px 40px 20px;
         
+
+
+}
+.dica-botao-noturno{
+
+    margin: 20px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 30px;
+
+    background-color: rgba(21, 24, 180, 0.432);
+
+    padding: 40px;
+    box-shadow: 2px 2px 2px 2px rgb(10, 1, 1);
+
+    border-radius: 45px;
+
+    color: white;
+    font-weight: bold;
 
 
 }

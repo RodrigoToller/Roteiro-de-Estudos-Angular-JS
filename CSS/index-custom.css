@@ -11,13 +11,13 @@
 }
 .background-geral{
 
-    background-image: url('../img/bg\ entrada.png');
+    background-image: url('../img/bg-entrada.png');
 
 
 }
 .background-geral-noturno{
 
-    background-image: url('../img/bg\ entrada\ noturno.png');
+    background-image: url('../img/bg-noturno.png');
 
 }
 body{
@@ -140,6 +140,9 @@ body{
     background-color: rgba(23, 2, 119, 0.733);
     font-weight: bold;
 
+    margin: 20px;
+
+
     font-size: 1.5rem;
     gap: 20px;
     transition: 1.2s;
@@ -150,6 +153,7 @@ body{
     background-color: rgba(77, 3, 250, 0.733);
     color: rgb(255, 210, 12);
     font-size: 1.8rem;
+    text-shadow: 5px 5px 25px rgb(247, 230, 0);
 
 }
 .button-modo-noturno{

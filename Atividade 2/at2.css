@@ -1,12 +1,4 @@
 
-.background-vermelho{
-
-    background-image: url('../img/backghround.png');
-
-
-}
-
-
 .lista-de-tarefas{
 
     display: grid;
@@ -24,14 +16,12 @@
 
 
 }
-
 .campo-robo{
 
     display: grid;
 
     padding: 50px;
 
-    border: solid 1px black;
 
     border-radius: 20px;
     justify-items: center;
@@ -52,7 +42,8 @@
     border-radius: 20px;
     border-radius: 50px;
     background-color: rgb(94, 18, 18);
-
+    padding: 20px;
+    font-weight: 500;
 
 }
 .campo-robo h2{
@@ -89,8 +80,6 @@
 
     color: white;
 }
-
-
 .secao-adicionar-tarefas{
 
 
@@ -100,13 +89,12 @@
 
     padding: 25px;
     border: 1px solid #ff05057a;
+    border: solid 6px #ff00007c;
+    box-shadow: 5px 5px 25px rgb(184, 0, 0);
     border-radius: 10px;
 
     justify-items: center;
 }
-
-
-
 .secao-adicionar-tarefas label{
 
 
@@ -120,7 +108,6 @@
    
 
 }
-
 .secao-adicionar-tarefas input{
 
     margin-top: 10px;
@@ -136,26 +123,29 @@
     font-size: 1.2rem;
 
 }
-
 .gestor-de-tarefas{
-    background-color: wheat;
-
+    
+    color: white;
     padding: 25px;
-    border: 1px solid #000;
+
+
+    
+
+    background-color: #e0030686;
+    border: solid 6px #ff00007c;
+    box-shadow: 5px 5px 25px rgb(184, 0, 0);
+
     border-radius: 10px;
 }
-
 .gestor-de-tarefas h2{
     font-size: 1.8rem;
-    background-color: var(--color-vermelho-angular);
+    
     text-align: center;
     padding: 10px;
     border-radius: 12px;
     text-transform: uppercase;
     color: white;
 }
-
-
 .gestor-de-tarefas ul {
 
   
@@ -164,18 +154,17 @@
     
 
 }
-
 .gestor-de-tarefas li{
     list-style-type: none;
     margin: 2px 0 10px 0;
-    background-color: rgba(196, 196, 196, 0.37);
+    background-color: rgba(182, 182, 182, 0.37);
     padding: 10px;
     border-radius: 6px;
     display: flex;
     justify-content: space-between;
 }
 .gestor-de-tarefas li:hover{
-    background-color: rgba(252, 141, 38, 0.562);
+    background-color: rgba(143, 21, 88, 0.562);
 }
 .adicionar-tarefa-button{
    
@@ -222,11 +211,16 @@
     color: red;
 
 }
-
 .code-model-laranja{
 
     color: yellow;
     font-weight: bold;
     font-style: italic;
+
+}
+.explicacao-geral{
+
+    display: grid;
+    justify-items: center;
 
 }

@@ -1,3 +1,10 @@
+h3{
+
+    font-weight: bold;
+    font-size: 1.4rem;
+
+
+}
 .explicacao-classica{
 
     background-color: rgba(168, 1, 1, 0.829);
@@ -10,7 +17,6 @@
 
 
 }
-
 .explicacao-classica ul{
 
     padding: 0;
@@ -20,3 +26,46 @@
 
 
 }
+.explicacao-classica h1{
+
+
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: rgb(255, 210, 12);
+
+
+
+}
+.explicacao-classica strong{
+
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: orange;
+
+}
+.explicacao-classica-noturno h1{
+
+
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: rgb(255, 210, 12);
+
+
+
+}
+.explicacao-classica-noturno strong{
+
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: orange;
+
+}
+.explicacao-classica-noturno{
+
+    box-shadow: 3px 3px 25px rgb(9, 22, 138);
+
+    border: solid 2px rgba(78, 29, 255, 0.377);
+    color: white;
+    background-color: rgba(23, 2, 119, 0.733);
+}
+

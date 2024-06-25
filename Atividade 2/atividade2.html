@@ -27,20 +27,17 @@
 
                     </div>
                 </div>
-            
-            
                 <div class="campo-robo">
                     <h1 >ANGULAR JS ROBO</h1>
                     <img src="../img/angular roboto.png" alt="foto do robo do angularJS">
                     <h2>{{ CHATTYPE1 }}</h2>
                     <h2>{{ CHATTYPE2 }}</h2>
                 </div>
-
                 <div class="gestor-de-tarefas"> 
                     <h2> Gestor de tarefas</h2>
                     <p>Total de tarefas Cadastradas: <span ng-bind="tasks.length"></span></p>
                     <!-- ng-show / ng-hide -->
-                    <p ng-show="tasks.length === 0">Nenhuma tarefa adicionada.</p>
+                    <p  ng-show="tasks.length === 0">Nenhuma tarefa adicionada.</p>
                     <!-- ng-class -->
                     <ul style="margin: 0;">
                         <li ng-repeat="task in tasks">
@@ -56,7 +53,6 @@
                     </ul>
                 </div>
         </div>
-        
         
         <div class="explicacao-geral">
 
@@ -115,7 +111,7 @@
             </div>
 
             <div class="campo-laranja">
-                <h2 style="text-align: center; color:aqua; font-weight: bold;">Diretivas utilizadas</h2>
+                <h2 style="text-align: center;">Diretivas utilizadas</h2>
 
                 <div class="formatar-grid-list">
                     <ul>
@@ -186,9 +182,9 @@
             </div>
 
             <div class="explicacao-classica">
-                <h2 style="text-align: center;">Papel das diretivas</h2>
+                <h1 style="text-align: center;">Papel das diretivas</h1>
                 <ul>
-                    <li><strong>Estrutura AngularJS no Código</strong>
+                    <li><h1>Estrutura AngularJS no Código</h1>
                       <ul>
                         <li><strong>Inicialização do Aplicativo:</strong>
                           <ul>
@@ -239,12 +235,11 @@
                       </ul>
                     </li>
                   </ul>
-
-
+    
+    
             </div>
+         
         </div>
-
-
     </main>
     <footer>
         <p>&copy; 2024 Plano de Estudo Angular. Todos os direitos reservados.</p>
@@ -271,7 +266,7 @@
             if (i < text.length) {
                 $scope[element] += text.charAt(i);
                 i++;
-                $timeout(type, 100);
+                $timeout(type, 50);
             } else if (callback) {
                 callback();
             }

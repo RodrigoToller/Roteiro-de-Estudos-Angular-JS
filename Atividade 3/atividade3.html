@@ -6,15 +6,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="at3.css">
-    <link rel="icon" href="../Atividade 1/img/angular roboto.png">
+    <link rel="icon" href="../img/angular roboto.png">
     <title>Dropdown Dinâmico e Elementos Condicionais - Atividade 3 - AngularJS</title>
 </head>
-<body ng-controller="meuController">
+<body ng-controller="meuController" class="background-vermelho">
     <header>
-        <a class="link-voltar" href="../index.html"><h1><i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i>Plano de Estudo Angular<i class="bi bi-journal-code" style="margin: 0 20px 0 20px;"></i></h1></a>
+        <h1> <a href="../secao-atividades/secao-atividade.html"> <i class="bi bi-dice-3-fill"></i>  Atividade 3 - Dropdown Dinâmico e Elementos Condicionais </a></h1>
     </header>
-    <main>
-        <h1 class="titulo-atividade">Dropdown Dinâmico e Elementos Condicionais</h1>
+    <main class="main-class">
         <div class="conteudo-aplicado">
             <div class="conteudo-principal">
                 <div class="dropdown-section box-person">
@@ -32,8 +31,8 @@
         </div>
         
         <div class="grid-separador"> 
-            <div class="explicacao-classica">
-                <h2 style="color: rgb(0, 161, 161);"> O que é um Dropdown Dinâmico? </h2>
+            <div class="explicacao-classica " style="padding: 60px;">
+                <h2 style="margin-bottom: 15px; "> O que é um Dropdown Dinâmico? </h2>
                 <p>Um dropdown dinâmico é uma lista suspensa que permite ao usuário 
                     selecionar uma opção de um conjunto de opções. 
                     O termo "dinâmico" indica que o conteúdo da lista pode mudar com base
@@ -45,13 +44,13 @@
                         <li> <strong>ng-options:</strong>  Itera sobre uma lista de itens e cria as opções do dropdown.</li>
                     </ul>
     
-                    <h3>Como Funciona?</h3>
+                    <h3 style="margin-bottom: 15px;">Como Funciona?</h3>
                     
                     Vamos usar uma analogia: imagine que você está em um restaurante e o garçom lhe dá um cardápio com diferentes opções de pratos.
                      O <strong>dropdown</strong>  é como esse cardápio, e <strong>ng-options</strong>  é o garçom que preenche o cardápio com os pratos disponíveis.</p>    
             </div>
-            <div class="campo-laranja">
-                <h2 style="color: aqua;">Elementos Condicionais</h2>
+            <div class="campo-laranja" style="padding:70px;">
+                <h2 style="margin-bottom: 20px; color: rgb(0, 102, 255);">Elementos Condicionais</h2>
                 <p> <h3>O que são Elementos Condicionais?</h3>
                     
                     Elementos condicionais são partes da interface que só são exibidas quando certas condições são atendidas. 
@@ -78,7 +77,7 @@
 
             <div class="campo-robo">
                 <h1 style="text-align: center;">ANGULAR JS ROBO</h1>
-                <img src="../Atividade 1/img/angular roboto.png" alt="foto do robo do angularJS">
+                <img src="../img/angular roboto.png" alt="foto do robo do angularJS">
                 <h2 ng-show="mostrarMsgRobo">{{ textoRobo }}</h2>
             </div>
 
@@ -107,7 +106,7 @@
 
     $scope.objeto = ["Qual é o seu nome?", "Me conte uma curiosidade!", "O que é Dropdown Dinâmico?"];
       
-    $scope.itens = ["A","B","C"];
+    $scope.itens = ["Opção de numero 1 do dropdown dinamico","Opção de numero 2 do dropdown dinamico ","Opção de numero 3 do dropdown dinamico "];
     $scope.mostrar = true;
 
     // Inicializar texto do robo
@@ -124,7 +123,7 @@
                 if (i < text.length) {
                     $scope[element] += text.charAt(i);
                     i++;
-                    $timeout(type, 100);
+                    $timeout(type, 50);
                 } else if (callback) {
                     callback();
                 }

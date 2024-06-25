@@ -31,11 +31,24 @@ body {
 }
 
 
+.background-vermelho{
+
+  background-image: url('../img/background.png');
+
+
+}
+
+
+
+
+
+
+
 .background-pagina{
-  background-image: url('/img/backghround.png');
+  background-image: url('../img/bg-entrada.png');
 }
 .background-pagina-noturno{
-  background-image: url('/img/bg\ noturno.png');
+  background-image: url('../img/bg-noturno.png');
 }
 
 .angular-simbolo-estatico{
@@ -59,7 +72,6 @@ body {
 main {
 padding: 2em;
 }
-
 .atividades{
 
 

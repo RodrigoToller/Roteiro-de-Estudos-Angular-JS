@@ -8,6 +8,9 @@ header {
     text-align: center;
     background: #5c0000e5;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 header h1 {
 
@@ -18,10 +21,6 @@ header h1 {
 
   font-weight: 600;
 }
-
-
-
-
 header a{
 
 
@@ -35,9 +34,20 @@ header a{
 
 
 }
-
 header a:hover{
 
   color: yellow;
 
 }
+.header-noturno{
+
+  background-color: rgba(30, 7, 131, 0.733);
+  box-shadow: 5px 5px 25px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+
